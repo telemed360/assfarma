@@ -19,7 +19,13 @@ const cardInfo: Record<
     badge: "Mais acessível",
     featured: true,
   },
-  casal: { name: "Vida Casal", summary: "Para você e mais uma pessoa no mesmo plano.", people: "Para 2 pessoas", lives: 2 },
+  casal: {
+    name: "Vida Casal",
+    summary: "Para você e mais uma pessoa no mesmo plano.",
+    people: "Para 2 pessoas",
+    lives: 2,
+    badge: "Mais equilibrado",
+  },
   familia: {
     name: "Vida Familiar",
     summary: "Para o titular e mais 3 dependentes.",
@@ -131,7 +137,13 @@ function PlanCard({ group, index }: { group: PlanGroup; index: number }) {
       <article className={`group relative isolate flex h-full flex-col rounded-[1.75rem] p-7 transition-all duration-300 ${c.card}`}>
         <CardFx tone={featured ? "green" : "peach"} />
         {info.badge && (
-          <span className="absolute -top-3 left-7 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-accent-600 to-accent-500 px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-wider text-white shadow-glow">
+          <span
+            className={`absolute -top-3 left-7 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-wider text-white ${
+              featured
+                ? "bg-gradient-to-r from-accent-600 to-accent-500 shadow-glow"
+                : "bg-gradient-to-r from-brand-700 to-brand-600 shadow-soft"
+            }`}
+          >
             <Sparkles className="h-3.5 w-3.5" aria-hidden />
             {info.badge}
           </span>
@@ -235,6 +247,10 @@ export function Plans() {
           <Reveal delay={planGroups.length * 80} className="h-full">
             <article className="group relative isolate flex h-full flex-col rounded-[1.75rem] bg-gradient-to-b from-accent-100 to-accent-200 p-7 text-ink shadow-card ring-1 ring-accent-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
               <CardFx tone="peach" />
+              <span className="absolute -top-3 left-7 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-brand-700 to-brand-600 px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-wider text-white shadow-soft">
+                <Sparkles className="h-3.5 w-3.5" aria-hidden />
+                Mais econômico
+              </span>
               <h3 className="font-display text-xl font-extrabold text-brand-900">Vida Empresarial</h3>
               <p className="mt-1.5 min-h-[2.75rem] text-sm leading-snug text-ink-soft">{companyPlan.summary}</p>
               <span className="mt-2 inline-flex w-fit rounded-full bg-white/80 px-3 py-1 text-xs font-bold text-accent-700 ring-1 ring-accent-200">
