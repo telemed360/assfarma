@@ -34,10 +34,10 @@ export function About() {
               <div className="absolute -inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-tr from-brand-100/80 to-brand-50/40 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-black/5">
                 <Image
-                  src="/images/hero-medico.jpg"
+                  src="/images/quem-somos-medico.jpg"
                   alt="Médico de jaleco e estetoscópio atendendo uma paciente por videochamada no notebook"
-                  width={1760}
-                  height={1120}
+                  width={2568}
+                  height={1632}
                   sizes="(min-width: 1024px) 560px, 100vw"
                   className="h-auto w-full"
                 />
