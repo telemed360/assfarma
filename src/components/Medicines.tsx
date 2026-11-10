@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 import { planGroups, waLink } from "@/lib/site";
 
 /**
- * Seção "Plano de Medicamentos (PBM)": crédito mensal exclusivo para remédios.
+ * Seção "Plano de Medicamentos (PBM)": crédito mensal exclusivo para medicamentos.
  * Layout centralizado (diferente do hero), com os 3 níveis de crédito em formato de cartão.
  * Fonte: apresentação PBM e tabela de planos da Assfarma.
  */
@@ -75,7 +75,7 @@ export function Medicines() {
           <Reveal delay={120}>
             <p className="lead mx-auto mt-6 max-w-2xl">
               Todo plano Assfarma vem com um <strong className="font-semibold text-ink">crédito mensal exclusivo
-              para medicamentos</strong>. O médico receita e você compra o remédio na farmácia sem tirar
+              para medicamentos</strong>. O médico receita e você compra o medicamento na farmácia sem tirar
               dinheiro do bolso, dentro do saldo do mês.
             </p>
           </Reveal>
@@ -104,7 +104,7 @@ export function Medicines() {
                         alt=""
                         width={1522}
                         height={345}
-                        className="h-14 w-auto max-w-[70%] object-contain object-left md:h-8 md:max-w-none"
+                        className="h-11 w-auto max-w-[60%] object-contain object-left md:h-8 md:max-w-none"
                       />
                       <span className="rounded-full bg-white/15 px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-wider ring-1 ring-white/25">
                         Crédito {String(level).padStart(2, "0")}

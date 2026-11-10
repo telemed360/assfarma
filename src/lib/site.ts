@@ -82,7 +82,7 @@ export type PlanTier = {
   price: string;
   /** Crédito mensal para medicamentos, ex.: "120,00". */
   credit: string;
-  /** ⚠️ AGUARDANDO: link de checkout. Sem link, o botão abre o WhatsApp. */
+  /** Link de checkout. Sem link, o botão abre o WhatsApp. */
   checkoutUrl?: string;
 };
 
@@ -101,9 +101,9 @@ export const planGroups: PlanGroup[] = [
     who: "Para o titular",
     coverage: "Consultas ilimitadas para o titular",
     tiers: [
-      { code: "A01", level: 1, price: "49,90", credit: "120,00" },
-      { code: "A02", level: 2, price: "59,90", credit: "250,00" },
-      { code: "A03", level: 3, price: "69,90", credit: "400,00" },
+      { code: "A01", level: 1, price: "49,90", credit: "120,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/f6149d17-066c-41f8-9b5b-4fb9f167a3a3/" },
+      { code: "A02", level: 2, price: "59,90", credit: "250,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/4e1bbe72-77fd-4608-85c2-b41838ae59a5/" },
+      { code: "A03", level: 3, price: "69,90", credit: "400,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/d6292485-243d-4dfe-8094-286f19c2acea/" },
     ],
   },
   {
@@ -112,9 +112,9 @@ export const planGroups: PlanGroup[] = [
     who: "Titular + cônjuge",
     coverage: "Consultas ilimitadas para titular + cônjuge",
     tiers: [
-      { code: "A04", level: 1, price: "79,90", credit: "240,00" },
-      { code: "A05", level: 2, price: "89,90", credit: "500,00" },
-      { code: "A06", level: 3, price: "99,90", credit: "800,00" },
+      { code: "A04", level: 1, price: "79,90", credit: "240,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/285ca7e6-edfc-4331-998f-50f73d843bd2/" },
+      { code: "A05", level: 2, price: "89,90", credit: "500,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/258f5d30-b5da-4a23-bbb7-cac655ca91d8/" },
+      { code: "A06", level: 3, price: "99,90", credit: "800,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/23566d51-2b81-43a2-bd93-e47967319c42/" },
     ],
   },
   {
@@ -123,9 +123,9 @@ export const planGroups: PlanGroup[] = [
     who: "Titular + 3 dependentes",
     coverage: "Consultas ilimitadas para titular + 3 dependentes",
     tiers: [
-      { code: "A07", level: 1, price: "129,90", credit: "480,00" },
-      { code: "A08", level: 2, price: "159,90", credit: "1.000,00" },
-      { code: "A09", level: 3, price: "169,90", credit: "1.600,00" },
+      { code: "A07", level: 1, price: "129,90", credit: "480,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/41aa93ae-def6-4e94-9178-6826c4e3c986/" },
+      { code: "A08", level: 2, price: "159,90", credit: "1.000,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/6675c937-70d2-4be8-8746-80b5357c9271/" },
+      { code: "A09", level: 3, price: "169,90", credit: "1.600,00", checkoutUrl: "https://clinica.assfarma.com.br/checkout/9b7d97e2-9c15-410c-a08a-16b9f30103ac/" },
     ],
   },
 ];

@@ -39,7 +39,7 @@ export function Hero() {
                              text-xs font-bold uppercase tracking-[0.12em] text-white shadow-glow transition-transform hover:-translate-y-0.5"
                 >
                   <Pill className="h-3.5 w-3.5" aria-hidden />
-                  Com crédito para remédios (PBM)
+                  Com crédito para medicamentos (PBM)
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
                 </a>
               </div>

@@ -28,18 +28,18 @@ export function About() {
       <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-50 blur-3xl" />
 
       <div className="container-jmx">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8">
           <Reveal className="order-2 lg:order-1">
-            <div className="relative mx-auto mb-6 max-w-[40rem] md:mb-0 lg:max-w-none">
+            <div className="relative mx-auto mb-6 max-w-[36rem] md:mb-0 lg:max-w-none">
               <div className="absolute -inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-tr from-brand-100/80 to-brand-50/40 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-black/5">
                 <Image
-                  src="/images/quem-somos-medico-grisalho.jpg"
+                  src="/images/quem-somos-medico-vertical.jpg"
                   alt="Médico grisalho de jaleco atendendo uma paciente por videochamada no notebook"
-                  width={2624}
-                  height={1632}
+                  width={1536}
+                  height={2752}
                   sizes="(min-width: 1024px) 560px, 100vw"
-                  className="aspect-[1.25] h-auto w-full object-cover object-[47%_center]"
+                  className="aspect-[4/5] h-auto w-full object-cover object-[center_36%] sm:aspect-[0.92]"
                 />
               </div>
 
