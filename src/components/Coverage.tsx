@@ -1,7 +1,7 @@
 import BrazilMap from "./illustrations/BrazilMap";
-import { Pill, FlaskConical, Building2, BriefcaseBusiness, Store, Sparkles } from "lucide-react";
+import { Pill, FlaskConical, Building2, BriefcaseBusiness, Store, Sparkles, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
-import { network } from "@/lib/site";
+import { network, waLink } from "@/lib/site";
 
 const icons = [Pill, FlaskConical, Building2, BriefcaseBusiness, Store, Sparkles];
 
@@ -42,15 +42,41 @@ export function Coverage() {
                 const Icon = icons[i % icons.length];
                 return (
                   <Reveal key={n.title} delay={140 + i * 60}>
-                    <div className="card card-hover flex h-full items-start gap-3.5 p-5">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                        <Icon className="h-[1.15rem] w-[1.15rem]" aria-hidden />
-                      </span>
-                      <div>
-                        <h3 className="text-[0.9375rem] font-bold leading-snug">{n.title}</h3>
-                        <p className="mt-1 text-sm leading-relaxed text-ink-muted">{n.desc}</p>
-                      </div>
-                    </div>
+                    {(() => {
+                      const body = (
+                        <>
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                            <Icon className="h-[1.15rem] w-[1.15rem]" aria-hidden />
+                          </span>
+                          <div>
+                            <h3 className="text-[0.9375rem] font-bold leading-snug">{n.title}</h3>
+                            <p className="mt-1 text-sm leading-relaxed text-ink-muted">{n.desc}</p>
+                            {n.whatsappMsg && (
+                              <span className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-600">
+                                Conversar no WhatsApp
+                                <ArrowRight
+                                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                                  aria-hidden
+                                />
+                              </span>
+                            )}
+                          </div>
+                        </>
+                      );
+                      const cls = "card card-hover flex h-full items-start gap-3.5 p-5";
+                      return n.whatsappMsg ? (
+                        <a
+                          href={waLink(n.whatsappMsg)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`group ${cls} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500`}
+                        >
+                          {body}
+                        </a>
+                      ) : (
+                        <div className={cls}>{body}</div>
+                      );
+                    })()}
                   </Reveal>
                 );
               })}

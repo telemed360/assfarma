@@ -187,12 +187,23 @@ export const specialties = [
 ] as const;
 
 /* ------------------------------------------------------------- COBERTURA */
-export const network = [
+type NetworkItem = {
+  title: string;
+  desc: string;
+  /** Se preenchido, o card vira um link para o WhatsApp com esta mensagem. */
+  whatsappMsg?: string;
+};
+
+export const network: NetworkItem[] = [
   { title: "Rede de farmácias", desc: "Descontos em medicamentos nas principais redes do país." },
   { title: "Drogarias de bairro", desc: "Parceiros locais para quem está longe dos grandes centros." },
   { title: "Novos parceiros", desc: "Rede em expansão contínua por todas as regiões." },
-  { title: "Profissional de Carreira", desc: "Seja um consultor Assfarma e receba renda recorrente na sua região." },
-] as const;
+  {
+    title: "Profissional de Carreira",
+    desc: "Seja um consultor Assfarma e receba renda recorrente na sua região.",
+    whatsappMsg: "Olá! Vim pelo site e quero ser um consultor Assfarma.",
+  },
+];
 
 /* ----------------------------------------------------------- DEPOIMENTOS */
 export const testimonials = [
