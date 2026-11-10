@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --logo-halo: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-ink;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-jmx {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold
+           transition-all duration-200 focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:opacity-60;
+  }
+  .btn-md { @apply px-5 py-2.5 text-[0.9375rem]; }
+  .btn-lg { @apply px-7 py-3.5 text-base; }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-accent-600 to-accent-500 text-white shadow-glow
+           hover:from-accent-500 hover:to-accent-400 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-dark {
+    @apply btn bg-navy-800 text-white hover:bg-navy-700 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-ghost {
+    @apply btn border border-brand-200 bg-white/80 text-brand-800 backdrop-blur
+           hover:border-brand-300 hover:bg-brand-50 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/30 bg-white/5 text-white backdrop-blur
+           hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-200/80 bg-brand-50
+           px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700;
+  }
+  .eyebrow-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10
+           px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand-100;
+  }
+
+  .card {
+    @apply rounded-3xl border border-slate-200/80 bg-white shadow-soft transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-brand-200 hover:shadow-card;
+  }
+
+  .section { @apply py-20 sm:py-24 lg:py-28; }
+
+  .lead { @apply text-lg leading-relaxed text-ink-soft sm:text-[1.0625rem]; }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-brand-700 via-brand-500 to-brand-400 bg-clip-text text-transparent;
+  }
+  /* Assinatura da marca: verde da logo -> laranja. */
+  .text-gradient-jmx {
+    @apply bg-gradient-to-r from-brand-700 via-brand-600 to-accent-500 bg-clip-text text-transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(43, 79, 53, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(43, 79, 53, 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+}
+
+/* ---------------------------------------------- Mapa do Brasil animado */
+.brazil-map .bm-state {
+  opacity: 0;
+  transform: translate(var(--fx), var(--fy)) rotate(var(--fr)) scale(0.9);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.brazil-map.is-on .bm-state {
+  opacity: 1;
+  transform: none;
+}
+
+.brazil-map .bm-pin {
+  opacity: 0;
+}
+.brazil-map.is-on .bm-pin {
+  animation: bm-drop 0.6s cubic-bezier(0.3, 1.45, 0.5, 1) both;
+}
+.brazil-map .bm-pulse {
+  fill: #f16536;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.brazil-map.is-on .bm-pulse {
+  animation: bm-pulse 2.8s ease-out infinite;
+}
+
+@keyframes bm-drop {
+  0% { opacity: 0; transform: translateY(-28px); }
+  55% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes bm-pulse {
+  0% { opacity: 0.4; transform: scale(0.4); }
+  70%, 100% { opacity: 0; transform: scale(1.9); }
+}
