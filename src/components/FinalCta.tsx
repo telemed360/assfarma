@@ -7,8 +7,9 @@ export function FinalCta() {
     <section className="relative overflow-hidden py-4">
       <div className="container-jmx">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.25rem] bg-gradient-to-br from-navy-800 via-brand-900 to-brand-800 px-7 py-14 text-center shadow-lift sm:px-14 sm:py-20">
-            <div className="pointer-events-none absolute inset-0">
+          <div className="relative isolate overflow-hidden rounded-[2.25rem] bg-gradient-to-br from-navy-800 via-brand-900 to-brand-800 px-7 py-14 text-center shadow-lift sm:px-14 sm:py-20">
+            {/* clip-path: o Safari (iPhone) ignora overflow-hidden + borda arredondada em elementos com blur */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[2.25rem] [clip-path:inset(0_round_2.25rem)]">
               <div className="absolute -right-20 -top-24 h-80 w-80 rounded-full bg-brand-400/30 blur-3xl" />
               <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-navy-500/40 blur-3xl" />
             </div>
