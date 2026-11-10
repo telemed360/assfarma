@@ -48,30 +48,31 @@ function PlanCard({ group, index }: { group: PlanGroup; index: number }) {
   // cores: o Familiar é destacado (fundo verde musgo, como no layout anterior)
   const c = featured
     ? {
-        card: "bg-gradient-to-b from-navy-800 to-navy-900 text-white shadow-lift ring-1 ring-brand-400/40",
-        title: "text-white",
-        text: "text-brand-100/80",
-        pill: "bg-white/10 text-brand-100 ring-1 ring-white/15",
-        box: "border-white/10 bg-white/[0.06]",
-        label: "text-brand-200/80",
-        track: "border-white/15 bg-white/10",
-        on: "bg-accent-500 text-white shadow-soft",
-        off: "text-brand-100 hover:bg-white/10",
-        boxText: "text-brand-100/80",
-        strong: "text-white",
-        price: "text-white",
-        muted: "text-brand-100/70",
-        btn: "btn-primary",
-        divider: "border-white/10",
-        check: "text-brand-300",
-        item: "text-brand-50/90",
+        // verde suave, no mesmo tom do pêssego (Individual e Familiar)
+        card: "bg-gradient-to-b from-brand-50 to-brand-100 text-ink shadow-card ring-1 ring-brand-300/70",
+        title: "text-brand-900",
+        text: "text-ink-soft",
+        pill: "bg-white/80 text-brand-700 ring-1 ring-brand-200",
+        box: "border-brand-200/70 bg-white/70",
+        label: "text-brand-700/80",
+        track: "border-brand-200 bg-white",
+        on: "bg-brand-600 text-white shadow-soft",
+        off: "text-ink-soft hover:bg-brand-50",
+        boxText: "text-ink-soft",
+        strong: "text-ink",
+        price: "text-brand-900",
+        muted: "text-ink-muted",
+        btn: "btn bg-brand-700 text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-800",
+        divider: "border-brand-200/70",
+        check: "text-brand-600",
+        item: "text-ink-soft",
       }
     : {
         // cards intercalados em pêssego/laranja suave (Casal e Empresarial)
-        card: "bg-gradient-to-b from-[#FFF6F1] to-accent-50 text-ink shadow-soft ring-1 ring-accent-200 hover:-translate-y-1 hover:shadow-card",
+        card: "bg-gradient-to-b from-accent-50 to-accent-100 text-ink shadow-card ring-1 ring-accent-300/70 hover:-translate-y-1 hover:shadow-card",
         title: "text-brand-900",
         text: "text-ink-soft",
-        pill: "bg-accent-100 text-accent-700",
+        pill: "bg-white/80 text-accent-700 ring-1 ring-accent-200",
         box: "border-accent-200/70 bg-white/70",
         label: "text-accent-700/80",
         track: "border-accent-200 bg-white",
@@ -187,10 +188,10 @@ export function Plans() {
 
           {/* empresa (pêssego, intercalado) */}
           <Reveal delay={planGroups.length * 80} className="h-full">
-            <article className="relative flex h-full flex-col rounded-[1.75rem] bg-gradient-to-b from-[#FFF6F1] to-accent-50 p-7 text-ink shadow-soft ring-1 ring-accent-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+            <article className="relative flex h-full flex-col rounded-[1.75rem] bg-gradient-to-b from-accent-50 to-accent-100 p-7 text-ink shadow-card ring-1 ring-accent-300/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
               <h3 className="font-display text-xl font-extrabold text-brand-900">Vida Empresarial</h3>
               <p className="mt-1.5 min-h-[2.75rem] text-sm leading-snug text-ink-soft">{companyPlan.summary}</p>
-              <span className="mt-2 inline-flex w-fit rounded-full bg-accent-100 px-3 py-1 text-xs font-bold text-accent-700">
+              <span className="mt-2 inline-flex w-fit rounded-full bg-white/80 px-3 py-1 text-xs font-bold text-accent-700 ring-1 ring-accent-200">
                 Para colaboradores
               </span>
 
