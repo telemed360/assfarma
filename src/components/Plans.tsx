@@ -299,7 +299,7 @@ export function Plans() {
         <Reveal delay={120}>
           <div
             role="note"
-            className="mx-auto mt-12 flex max-w-3xl items-start gap-4 rounded-2xl border border-brand-200 bg-white/90 px-5 py-4 text-left shadow-soft backdrop-blur sm:items-center sm:px-6"
+            className="mx-auto mt-12 flex max-w-4xl items-start gap-4 rounded-2xl border border-brand-200 bg-white/90 px-5 py-4 text-left shadow-soft backdrop-blur sm:items-center sm:px-6"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
               <Info className="h-5 w-5" aria-hidden />
