@@ -111,8 +111,15 @@ export function Footer() {
           </p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {year} {site.shortName}. Todos os direitos reservados. {site.legal.razaoSocial} •
-              CNPJ {site.legal.cnpj}
+              © {year} {site.shortName}. Todos os direitos reservados.{" "}
+              {[
+                site.legal.razaoSocial,
+                site.legal.cnpj && `CNPJ ${site.legal.cnpj}`,
+                site.legal.projeto,
+                site.legal.responsavelTecnico && `Responsável Técnico: ${site.legal.responsavelTecnico}`,
+              ]
+                .filter(Boolean)
+                .join(" • ")}
             </p>
             <p className="text-brand-100/45">{site.domain}</p>
           </div>

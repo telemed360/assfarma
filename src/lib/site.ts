@@ -20,11 +20,13 @@ export const site = {
   /** Plataforma de teleconsulta (consultório virtual) da AssFarma. */
   clinicUrl: "https://clinica.assfarma.com.br",
 
-  /** ⚠️ TROCAR: dados jurídicos que aparecem no rodapé. */
+  /** Dados jurídicos que aparecem no rodapé. Campo vazio não aparece no site. */
   legal: {
-    razaoSocial: "RAZÃO SOCIAL DA ASSFARMA",
-    cnpj: "00.000.000/0000-00",
-    diretorTecnico: "Dr. Nome Sobrenome, CRM/UF 000000",
+    razaoSocial: "Conect Invest Capital",
+    projeto: "Projeto Assfarma Saúde Social",
+    /** ⚠️ AGUARDANDO: CNPJ da Conect Invest Capital. */
+    cnpj: "",
+    responsavelTecnico: "José Lafaiete Barbosa",
   },
 
   description:
