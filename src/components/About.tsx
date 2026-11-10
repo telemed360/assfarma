@@ -30,7 +30,7 @@ export function About() {
       <div className="container-jmx">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal className="order-2 lg:order-1">
-            <div className="relative mx-auto max-w-[36rem] lg:max-w-none">
+            <div className="relative mx-auto mb-6 max-w-[36rem] md:mb-0 lg:max-w-none">
               <div className="absolute -inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-tr from-brand-100/80 to-brand-50/40 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-black/5">
                 <Image
@@ -44,29 +44,29 @@ export function About() {
               </div>
 
               {/* selo: avaliação (mantido do layout anterior) */}
-              <div className="absolute -bottom-6 right-4 animate-float rounded-2xl bg-white/95 px-5 py-3.5 shadow-card ring-1 ring-brand-100 backdrop-blur sm:-right-5">
-                <div className="flex items-center gap-2.5">
-                  <span className="font-display text-2xl font-extrabold leading-none text-brand-800">5,0</span>
+              <div className="absolute -bottom-5 right-2 animate-float rounded-2xl bg-white/95 px-3 py-2 shadow-card ring-1 ring-brand-100 backdrop-blur md:-bottom-6 md:-right-5 md:px-5 md:py-3.5">
+                <div className="flex items-center gap-2 md:gap-2.5">
+                  <span className="font-display text-lg font-extrabold leading-none text-brand-800 md:text-2xl">5,0</span>
                   <span className="flex gap-0.5" aria-hidden>
                     {[0, 1, 2, 3, 4].map((i) => (
-                      <Star key={i} className="h-4 w-4 fill-[#FFB020] text-[#FFB020]" />
+                      <Star key={i} className="h-3 w-3 fill-[#FFB020] text-[#FFB020] md:h-4 md:w-4" />
                     ))}
                   </span>
                 </div>
-                <p className="mt-1 text-xs text-ink-muted">Atendimento humano e acolhedor</p>
+                <p className="mt-1 hidden text-xs text-ink-muted md:block">Atendimento humano e acolhedor</p>
               </div>
 
               {/* selo: celular */}
               <div
-                className="absolute -left-6 top-6 hidden animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur md:flex"
+                className="absolute flex animate-float items-center rounded-2xl bg-white/95 shadow-card ring-1 ring-brand-100 backdrop-blur -bottom-5 left-2 gap-2 px-3 py-2 md:-left-6 md:bottom-auto md:top-6 md:gap-2.5 md:px-4 md:py-3"
                 style={{ animationDelay: "-4s" }}
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                <span className="hidden h-9 w-9 items-center justify-center rounded-xl bg-brand-50 text-brand-700 md:flex">
                   <Stethoscope className="h-[1.05rem] w-[1.05rem]" aria-hidden />
                 </span>
                 <div className="leading-tight">
-                  <p className="text-sm font-bold text-ink">Time médico de verdade</p>
-                  <p className="text-xs text-ink-muted">com registro ativo no CRM</p>
+                  <p className="text-xs font-bold text-ink md:text-sm">Time médico de verdade</p>
+                  <p className="hidden text-xs text-ink-muted md:block">com registro ativo no CRM</p>
                 </div>
               </div>
             </div>

@@ -109,28 +109,28 @@ export function Hero() {
               </div>
 
               {/* selo: médico online */}
-              <div className="absolute -left-6 top-8 hidden animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur md:flex">
+              <div className="absolute flex animate-float items-center rounded-2xl bg-white/95 shadow-card ring-1 ring-brand-100 backdrop-blur -bottom-5 left-2 gap-2 px-3 py-2 md:-left-6 md:bottom-auto md:top-8 md:gap-2.5 md:px-4 md:py-3">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75 animate-pulseRing" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-500" />
                 </span>
                 <div className="leading-tight">
-                  <p className="text-sm font-bold text-ink">Médico online agora</p>
-                  <p className="text-xs text-ink-muted">Pronto atendimento 24h</p>
+                  <p className="text-xs font-bold text-ink md:text-sm">Médico online agora</p>
+                  <p className="hidden text-xs text-ink-muted md:block">Pronto atendimento 24h</p>
                 </div>
               </div>
 
               {/* selo: receita */}
               <div
-                className="absolute -bottom-5 right-4 flex animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur sm:-right-5"
+                className="absolute flex animate-float items-center rounded-2xl bg-white/95 shadow-card ring-1 ring-brand-100 backdrop-blur -bottom-5 right-2 gap-2 px-3 py-2 md:-right-5 md:gap-2.5 md:px-4 md:py-3"
                 style={{ animationDelay: "-3.5s" }}
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-50 text-accent-600">
-                  <Pill className="h-[1.05rem] w-[1.05rem]" aria-hidden />
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-50 text-accent-600 md:h-9 md:w-9 md:rounded-xl">
+                  <Pill className="h-3.5 w-3.5 md:h-[1.05rem] md:w-[1.05rem]" aria-hidden />
                 </span>
                 <div className="leading-tight">
-                  <p className="text-sm font-bold text-ink">Receita + crédito</p>
-                  <p className="text-xs text-ink-muted">para comprar o remédio</p>
+                  <p className="text-xs font-bold text-ink md:text-sm">Receita + crédito</p>
+                  <p className="hidden text-xs text-ink-muted md:block">para comprar o remédio</p>
                 </div>
               </div>
             </div>
