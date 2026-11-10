@@ -140,7 +140,7 @@ export function Hero() {
 
       {/* faixa de destaques */}
       <div className="relative border-y border-slate-200/80 bg-white/70 backdrop-blur">
-        <div className="mask-fade-x overflow-hidden py-4">
+        <div className="overflow-hidden py-4">
           <div className="flex w-max animate-marquee gap-10 pr-10">
             {[0, 1].map((dup) => (
               <div key={dup} className="flex shrink-0 items-center gap-10" aria-hidden={dup === 1}>

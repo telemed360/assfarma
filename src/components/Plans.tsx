@@ -1,20 +1,158 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Building2, Check, Pill, Sparkles, User, Users, UsersRound } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import { companyPlan, planFeatures, planGroups, waLink, type PlanGroup } from "@/lib/site";
 
-const tabIcons: Record<PlanGroup["id"], typeof User> = {
-  individual: User,
-  casal: Users,
-  familia: UsersRound,
+/** Textos de cada card. */
+const cardInfo: Record<
+  PlanGroup["id"],
+  { name: string; summary: string; people: string; lives: number; badge?: string; featured?: boolean }
+> = {
+  individual: { name: "Individual", summary: "Para quem quer cuidar da própria saúde.", people: "Para 1 pessoa", lives: 1 },
+  casal: { name: "Casal", summary: "Para você e mais uma pessoa no mesmo plano.", people: "Para 2 pessoas", lives: 2 },
+  familia: {
+    name: "Familiar",
+    summary: "Para o titular e mais 3 dependentes.",
+    people: "Até 4 pessoas",
+    lives: 4,
+    badge: "Mais completo",
+    featured: true,
+  },
 };
 
-export function Plans() {
-  const [active, setActive] = useState<PlanGroup["id"]>("individual");
-  const group = planGroups.find((g) => g.id === active) ?? planGroups[0];
+const toNumber = (v: string) => Number(v.replace(/\./g, "").replace(",", "."));
+const brl = (n: number) => n.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+function PlanCard({ group, index }: { group: PlanGroup; index: number }) {
+  const [level, setLevel] = useState<1 | 2 | 3>(1);
+  const tier = group.tiers.find((t) => t.level === level) ?? group.tiers[0];
+  const info = cardInfo[group.id];
+  const featured = Boolean(info.featured);
+  const perLife = brl(toNumber(tier.credit) / info.lives);
+
+  const href =
+    tier.checkoutUrl ??
+    waLink(
+      `Olá! Quero assinar o Plano ${info.name} da Assfarma com crédito de R$ ${tier.credit} para medicamentos (${tier.code}).`,
+    );
+
+  // cores: o Familiar é destacado (fundo verde musgo, como no layout anterior)
+  const c = featured
+    ? {
+        card: "bg-gradient-to-b from-navy-800 to-navy-900 text-white shadow-lift ring-1 ring-brand-400/40 md:-translate-y-2",
+        title: "text-white",
+        text: "text-brand-100/80",
+        pill: "bg-white/10 text-brand-100 ring-1 ring-white/15",
+        box: "border-white/10 bg-white/[0.06]",
+        label: "text-brand-200/80",
+        track: "border-white/15 bg-white/10",
+        on: "bg-accent-500 text-white shadow-soft",
+        off: "text-brand-100 hover:bg-white/10",
+        boxText: "text-brand-100/80",
+        strong: "text-white",
+        price: "text-white",
+        muted: "text-brand-100/70",
+        btn: "btn-primary",
+        divider: "border-white/10",
+        check: "text-brand-300",
+        item: "text-brand-50/90",
+      }
+    : {
+        card: "bg-white border border-slate-200/80 shadow-soft hover:-translate-y-1 hover:border-brand-200 hover:shadow-card",
+        title: "text-brand-900",
+        text: "text-ink-soft",
+        pill: "bg-brand-50 text-brand-600",
+        box: "border-slate-200/80 bg-slate-50/70",
+        label: "text-ink-muted",
+        track: "border-slate-200 bg-white",
+        on: "bg-brand-600 text-white shadow-soft",
+        off: "text-ink-soft hover:bg-brand-50",
+        boxText: "text-ink-soft",
+        strong: "text-ink",
+        price: "text-brand-900",
+        muted: "text-ink-muted",
+        btn: "btn border border-slate-300 bg-white text-ink hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50",
+        divider: "border-slate-100",
+        check: "text-brand-500",
+        item: "text-ink-soft",
+      };
+
+  return (
+    <Reveal delay={index * 80} className="h-full">
+      <article className={`relative flex h-full flex-col rounded-[1.75rem] p-7 transition-all duration-300 ${c.card}`}>
+        {info.badge && (
+          <span className="absolute -top-3 left-7 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-accent-600 to-accent-500 px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-wider text-white shadow-glow">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden />
+            {info.badge}
+          </span>
+        )}
+
+        <h3 className={`font-display text-xl font-extrabold ${c.title}`}>{info.name}</h3>
+        <p className={`mt-1.5 min-h-[2.75rem] text-sm leading-snug ${c.text}`}>{info.summary}</p>
+        <span className={`mt-2 inline-flex w-fit rounded-full px-3 py-1 text-xs font-bold ${c.pill}`}>{info.people}</span>
+
+        {/* crédito */}
+        <div className={`mt-6 rounded-2xl border p-4 ${c.box}`}>
+          <p className={`text-[0.6875rem] font-bold uppercase tracking-[0.12em] ${c.label}`}>
+            Crédito mensal para medicamentos
+          </p>
+          <div
+            role="radiogroup"
+            aria-label={`Crédito mensal do plano ${info.name}`}
+            className={`mt-3 grid grid-cols-3 gap-1 rounded-full border p-1 ${c.track}`}
+          >
+            {group.tiers.map((t) => {
+              const on = t.level === level;
+              return (
+                <button
+                  key={t.code}
+                  type="button"
+                  role="radio"
+                  aria-checked={on}
+                  onClick={() => setLevel(t.level)}
+                  className={`rounded-full px-1 py-2 text-sm font-bold transition-all duration-200 ${on ? c.on : c.off}`}
+                >
+                  {t.credit.replace(",00", "")}
+                </button>
+              );
+            })}
+          </div>
+          <p className={`mt-3 min-h-[3.75rem] text-[0.8125rem] leading-snug ${c.boxText}`}>
+            Crédito de <strong className={c.strong}>R$ {tier.credit}</strong> por mês para compra de medicamentos
+            {info.lives > 1 && (
+              <>
+                , sendo <strong className={c.strong}>R$ {perLife}</strong> por vida
+              </>
+            )}
+          </p>
+        </div>
+
+        <p className="mt-6 flex items-end gap-1.5">
+          <span className={`pb-1.5 text-lg font-bold ${c.price}`}>R$</span>
+          <span className={`font-display text-[2.9rem] font-extrabold leading-none ${c.price}`}>{tier.price}</span>
+          <span className={`pb-1.5 text-sm font-medium ${c.muted}`}>/mês</span>
+        </p>
+
+        <a href={href} target="_blank" rel="noopener noreferrer" className={`btn-lg mt-5 w-full ${c.btn}`}>
+          Contratar agora
+        </a>
+
+        <ul className={`mt-6 space-y-2.5 border-t pt-5 ${c.divider}`}>
+          {[group.coverage, ...planFeatures].map((f) => (
+            <li key={f} className="flex gap-2 text-sm leading-snug">
+              <Check className={`mt-0.5 h-4 w-4 shrink-0 ${c.check}`} aria-hidden />
+              <span className={c.item}>{f}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+    </Reveal>
+  );
+}
+
+export function Plans() {
   return (
     <section id="planos" className="section relative overflow-hidden bg-brand-50/50">
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
@@ -24,174 +162,55 @@ export function Plans() {
           <Reveal><span className="eyebrow">Planos e preços</span></Reveal>
           <Reveal delay={70}>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[2.6rem]">
-              Telemedicina e crédito para medicamentos em um só plano
+              Escolha o plano que combina com a sua vida
             </h2>
           </Reveal>
           <Reveal delay={120}>
             <p className="lead mt-4">
-              Escolha para quem é o plano e quanto de crédito mensal você quer para comprar
-              remédios. Sem carência e sem fidelidade.
+              Telemedicina com crédito mensal para medicamentos. Sem taxa de contratação e sem carência.
             </p>
           </Reveal>
         </div>
 
-        {/* abas: tipo de plano */}
-        <Reveal delay={160}>
-          <div
-            role="tablist"
-            aria-label="Tipo de plano"
-            className="mx-auto mt-10 grid max-w-xl grid-cols-3 gap-1.5 rounded-[1.4rem] border border-brand-100 bg-white p-1.5 shadow-soft"
-          >
-            {planGroups.map((g) => {
-              const Icon = tabIcons[g.id];
-              const on = g.id === active;
-              return (
-                <button
-                  key={g.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={on}
-                  aria-controls="planos-cards"
-                  onClick={() => setActive(g.id)}
-                  className={`flex flex-col items-center gap-0.5 rounded-2xl px-2 py-2.5 transition-all duration-200 sm:flex-row sm:justify-center sm:gap-2 ${
-                    on ? "bg-brand-700 text-white shadow-soft" : "text-ink-soft hover:bg-brand-50"
-                  }`}
-                >
-                  <Icon className={`h-4 w-4 shrink-0 ${on ? "text-accent-300" : "text-brand-500"}`} aria-hidden />
-                  <span className="text-[0.9375rem] font-bold leading-tight">{g.name}</span>
-                </button>
-              );
-            })}
-          </div>
-          <p className="mt-3 text-center text-sm text-ink-muted">{group.who}</p>
-        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {planGroups.map((g, i) => (
+            <PlanCard key={g.id} group={g} index={i} />
+          ))}
 
-        {/* cards: 3 níveis de crédito */}
-        <div id="planos-cards" role="tabpanel" className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3">
-          {group.tiers.map((t) => {
-            const featured = t.level === 3;
-            const href =
-              t.checkoutUrl ??
-              waLink(
-                `Olá! Quero assinar o Plano ${group.name} da Assfarma com crédito de R$ ${t.credit} para medicamentos (${t.code}).`,
-              );
-            return (
-              <article
-                key={t.code}
-                className={`relative flex h-full flex-col rounded-[1.75rem] p-7 transition-all duration-300 ${
-                  featured
-                    ? "bg-gradient-to-b from-brand-700 to-brand-900 text-white shadow-lift ring-1 ring-brand-400/40 md:-translate-y-2"
-                    : "border border-slate-200/80 bg-white shadow-soft hover:-translate-y-1 hover:border-brand-200 hover:shadow-card"
-                }`}
-              >
-                {featured && (
-                  <span className="absolute -top-3 left-7 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-accent-600 to-accent-500 px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-wider text-white shadow-glow">
-                    <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                    Maior crédito
-                  </span>
-                )}
-
-                <p className={`text-xs font-bold uppercase tracking-[0.14em] ${featured ? "text-brand-200" : "text-brand-600"}`}>
-                  Crédito {String(t.level).padStart(2, "0")}
-                </p>
-                <h3 className={`mt-1 font-display text-lg font-bold ${featured ? "text-white" : "text-ink"}`}>
-                  Plano {group.name}
-                </h3>
-
-                <p className="mt-5 flex items-end gap-1">
-                  <span className={`pb-1 text-base font-bold ${featured ? "text-brand-200" : "text-brand-600"}`}>R$</span>
-                  <span
-                    className={`font-display text-[2.6rem] font-extrabold leading-none ${
-                      featured ? "text-white" : "text-gradient-brand"
-                    }`}
-                  >
-                    {t.price}
-                  </span>
-                  <span className={`pb-1 text-sm font-medium ${featured ? "text-brand-100/70" : "text-ink-muted"}`}>
-                    /mês
-                  </span>
-                </p>
-
-                {/* crédito */}
-                <div
-                  className={`mt-5 flex items-center gap-3 rounded-2xl px-4 py-3.5 ${
-                    featured ? "bg-accent-500 text-white shadow-glow" : "bg-accent-50 text-accent-800 ring-1 ring-accent-100"
-                  }`}
-                >
-                  <span
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
-                      featured ? "bg-white/20" : "bg-white text-accent-600"
-                    }`}
-                  >
-                    <Pill className="h-[1.1rem] w-[1.1rem]" aria-hidden />
-                  </span>
-                  <div className="leading-tight">
-                    <p className="font-display text-xl font-extrabold">+ R$ {t.credit}</p>
-                    <p className={`text-xs font-medium ${featured ? "text-white/85" : "text-accent-700"}`}>
-                      por mês em medicamentos
-                    </p>
-                  </div>
-                </div>
-
-                <ul className="mt-6 flex-1 space-y-3">
-                  {[group.coverage, ...planFeatures].map((f) => (
-                    <li key={f} className="flex gap-2.5 text-[0.9375rem] leading-snug">
-                      <Check
-                        className={`mt-0.5 h-[1.05rem] w-[1.05rem] shrink-0 ${featured ? "text-brand-300" : "text-brand-500"}`}
-                        aria-hidden
-                      />
-                      <span className={featured ? "text-brand-50/90" : "text-ink-soft"}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn-lg mt-8 w-full ${featured ? "btn-primary" : "btn-dark"}`}
-                >
-                  Assinar este plano
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
-              </article>
-            );
-          })}
-        </div>
-
-        {/* empresa */}
-        <Reveal delay={100}>
-          <div className="mx-auto mt-10 flex max-w-5xl flex-col gap-6 rounded-[1.75rem] border border-slate-200/80 bg-white p-7 shadow-soft md:flex-row md:items-center md:justify-between">
-            <div className="flex items-start gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
-                <Building2 className="h-5 w-5" aria-hidden />
+          {/* empresa */}
+          <Reveal delay={planGroups.length * 80} className="h-full">
+            <article className="relative flex h-full flex-col rounded-[1.75rem] border border-slate-200/80 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+              <h3 className="font-display text-xl font-extrabold text-brand-900">Empresa</h3>
+              <p className="mt-1.5 min-h-[2.75rem] text-sm leading-snug text-ink-soft">{companyPlan.summary}</p>
+              <span className="mt-2 inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-600">
+                Para colaboradores
               </span>
-              <div>
-                <h3 className="font-display text-lg font-bold text-ink">
-                  {companyPlan.name} <span className="ml-1 text-base font-semibold text-brand-600">· {companyPlan.price}</span>
-                </h3>
-                <p className="mt-1 text-sm text-ink-muted">{companyPlan.summary}</p>
-                <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
+
+              <div className="mt-6 flex-1 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4">
+                <p className="text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-ink-muted">O que inclui</p>
+                <ul className="mt-3 space-y-2.5">
                   {companyPlan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-1.5 text-sm text-ink-soft">
-                      <Check className="h-4 w-4 text-brand-500" aria-hidden />
-                      {f}
+                    <li key={f} className="flex gap-2 text-sm leading-snug">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" aria-hidden />
+                      <span className="text-ink-soft">{f}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
-            <a
-              href={waLink("Olá! Quero falar com um consultor sobre o Plano Empresa da Assfarma.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-dark btn-lg shrink-0"
-            >
-              {companyPlan.cta}
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </a>
-          </div>
-        </Reveal>
+
+              <p className="mt-6 font-display text-[2.1rem] font-extrabold leading-none text-brand-900">{companyPlan.price}</p>
+
+              <a
+                href={waLink("Olá! Quero falar com um consultor sobre o Plano Empresa da Assfarma.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-lg mt-5 w-full border border-slate-300 bg-white text-ink hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
+              >
+                {companyPlan.cta}
+              </a>
+            </article>
+          </Reveal>
+        </div>
 
         <Reveal delay={120}>
           <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
