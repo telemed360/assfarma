@@ -81,8 +81,8 @@ export function Plans() {
                       ? plan.checkoutUrl
                       : waLink(
                           plan.id === "empresa"
-                            ? "Olá! Quero falar com um consultor sobre o Plano Empresa da AssFarma."
-                            : `Olá! Quero assinar o ${plan.name} da AssFarma.`,
+                            ? "Olá! Quero falar com um consultor sobre o Plano Empresa da Assfarma."
+                            : `Olá! Quero assinar o ${plan.name} da Assfarma.`,
                         )
                   }
                   target="_blank"
@@ -99,7 +99,7 @@ export function Plans() {
 
         <Reveal delay={120}>
           <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
-            AssFarma é um serviço de assinatura de teleconsultas e{" "}
+            Assfarma é um serviço de assinatura de teleconsultas e{" "}
             <strong className="font-semibold text-ink-soft">não é um plano de saúde</strong> nem
             substitui atendimento de urgência e emergência presencial. Em caso de emergência, ligue 192.
           </p>

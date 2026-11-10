@@ -111,7 +111,7 @@ export function Header() {
               Contratar agora
             </a>
             <a
-              href={waLink("Olá! Quero falar com um atendente da AssFarma.")}
+              href={waLink("Olá! Quero falar com um atendente da Assfarma.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost btn-lg w-full"

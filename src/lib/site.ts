@@ -5,8 +5,8 @@
  * ---------------------------------------------------------------------- */
 
 export const site = {
-  name: "AssFarma",
-  shortName: "AssFarma",
+  name: "Assfarma",
+  shortName: "Assfarma",
   /** Domínio na Cloudflare: assfarma.com.br */
   domain: "assfarma.com.br",
   url: "https://www.assfarma.com.br",
@@ -17,7 +17,7 @@ export const site = {
   whatsapp: "5531990996657",
   whatsappLabel: "(31) 99099-6657",
 
-  /** Plataforma de teleconsulta (consultório virtual) da AssFarma. */
+  /** Plataforma de teleconsulta (consultório virtual) da Assfarma. */
   clinicUrl: "https://clinica.assfarma.com.br",
 
   /** Dados jurídicos que aparecem no rodapé. Campo vazio não aparece no site. */
@@ -93,7 +93,7 @@ export const plans: Plan[] = [
       "Sem carência e sem custos adicionais",
     ],
     cta: "Assinar plano individual",
-    /** ⚠️ AGUARDANDO: link de checkout da AssFarma. Sem link, o botão abre o WhatsApp. */
+    /** ⚠️ AGUARDANDO: link de checkout da Assfarma. Sem link, o botão abre o WhatsApp. */
     // checkoutUrl: "",
   },
   {
@@ -109,7 +109,7 @@ export const plans: Plan[] = [
       "Sem carência e sem custos adicionais",
     ],
     cta: "Assinar plano casal",
-    /** ⚠️ AGUARDANDO: link de checkout da AssFarma. Sem link, o botão abre o WhatsApp. */
+    /** ⚠️ AGUARDANDO: link de checkout da Assfarma. Sem link, o botão abre o WhatsApp. */
     // checkoutUrl: "",
   },
   {
@@ -127,7 +127,7 @@ export const plans: Plan[] = [
       "Sem carência e sem custos adicionais",
     ],
     cta: "Assinar plano familiar",
-    /** ⚠️ AGUARDANDO: link de checkout da AssFarma. Sem link, o botão abre o WhatsApp. */
+    /** ⚠️ AGUARDANDO: link de checkout da Assfarma. Sem link, o botão abre o WhatsApp. */
     // checkoutUrl: "",
   },
   {
@@ -191,6 +191,7 @@ export const network = [
   { title: "Rede de farmácias", desc: "Descontos em medicamentos nas principais redes do país." },
   { title: "Drogarias de bairro", desc: "Parceiros locais para quem está longe dos grandes centros." },
   { title: "Novos parceiros", desc: "Rede em expansão contínua por todas as regiões." },
+  { title: "Profissional de Carreira", desc: "Seja um consultor Assfarma e receba renda recorrente na sua região." },
 ] as const;
 
 /* ----------------------------------------------------------- DEPOIMENTOS */
@@ -205,21 +206,21 @@ export const testimonials = [
     name: "Mário Alves",
     city: "Curitiba, PR",
     text:
-      "Ser cliente da AssFarma foi a escolha certa para mim e para minha família. Conseguimos atendimento médico sem precisar correr riscos em hospitais.",
+      "Ser cliente da Assfarma foi a escolha certa para mim e para minha família. Conseguimos atendimento médico sem precisar correr riscos em hospitais.",
   },
   {
     name: "Jullya Santana",
     city: "Recife, PE",
     text:
-      "Com o meu salário não consigo pagar um plano de saúde tradicional. A AssFarma é exatamente o que eu precisava: qualidade sem depender só do SUS.",
+      "Com o meu salário não consigo pagar um plano de saúde tradicional. A Assfarma é exatamente o que eu precisava: qualidade sem depender só do SUS.",
   },
 ] as const;
 
 /* ------------------------------------------------------------------- FAQ */
 export const faq = [
   {
-    q: "A AssFarma é um plano de saúde?",
-    a: "Não. A AssFarma é um serviço de telemedicina por assinatura, regulamentado pelo Conselho Federal de Medicina (Resolução CFM nº 2.314/2022). Não substitui um plano de saúde nem atende urgências que exijam socorro presencial. Nesses casos, procure o pronto-socorro mais próximo ou ligue 192.",
+    q: "A Assfarma é um plano de saúde?",
+    a: "Não. A Assfarma é um serviço de telemedicina por assinatura, regulamentado pelo Conselho Federal de Medicina (Resolução CFM nº 2.314/2022). Não substitui um plano de saúde nem atende urgências que exijam socorro presencial. Nesses casos, procure o pronto-socorro mais próximo ou ligue 192.",
   },
   {
     q: "Tem carência ou taxa de adesão?",

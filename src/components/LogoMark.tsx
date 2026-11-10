@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 /**
- * Marca AssFarma.
+ * Marca Assfarma.
  * `tone="dark"` usa a versão monocromática branca, para fundos escuros.
  * Os arquivos ficam em /public/brand.
  */

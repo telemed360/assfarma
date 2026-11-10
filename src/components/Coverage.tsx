@@ -1,9 +1,9 @@
 import BrazilMap from "./illustrations/BrazilMap";
-import { Pill, FlaskConical, Building2, ScanLine, Store, Sparkles } from "lucide-react";
+import { Pill, FlaskConical, Building2, BriefcaseBusiness, Store, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import { network } from "@/lib/site";
 
-const icons = [Pill, FlaskConical, Building2, ScanLine, Store, Sparkles];
+const icons = [Pill, FlaskConical, Building2, BriefcaseBusiness, Store, Sparkles];
 
 export function Coverage() {
   return (

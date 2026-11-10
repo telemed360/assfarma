@@ -32,7 +32,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Consultas médicas online 24h`,
+    default: `${site.name} | Telemedicina & Farmácia`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "pronto atendimento 24h",
     "plano de telemedicina",
     "médico online",
-    "AssFarma",
+    "Assfarma",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -52,12 +52,12 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} | Consultas médicas online 24h`,
+    title: `${site.name} | Telemedicina & Farmácia`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | Consultas médicas online 24h`,
+    title: `${site.name} | Telemedicina & Farmácia`,
     description: site.description,
   },
   robots: {

@@ -48,7 +48,7 @@ const jsonLd = {
     },
     {
       "@type": "OfferCatalog",
-      name: "Planos AssFarma",
+      name: "Planos Assfarma",
       itemListElement: plans
         .filter((p) => p.price.startsWith("R$"))
         .map((p) => ({

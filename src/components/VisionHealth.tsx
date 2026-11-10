@@ -23,7 +23,7 @@ export function VisionHealth() {
             </Reveal>
             <Reveal delay={120}>
               <p className="lead mt-5">
-                O programa Saúde Visual da AssFarma reúne orientação especializada e descontos em
+                O programa Saúde Visual da Assfarma reúne orientação especializada e descontos em
                 óticas e exames, porque cuidar da visão também é cuidar da qualidade de vida.
               </p>
             </Reveal>
@@ -44,7 +44,7 @@ export function VisionHealth() {
 
             <Reveal delay={380}>
               <a
-                href={waLink("Olá! Quero saber mais sobre o programa Saúde Visual da AssFarma.")}
+                href={waLink("Olá! Quero saber mais sobre o programa Saúde Visual da Assfarma.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary btn-lg mt-9"

@@ -66,7 +66,7 @@ export function BrazilMap({ className = "" }: { className?: string }) {
       overflow="visible"
       className={`brazil-map ${on ? "is-on" : ""} ${className}`}
       role="img"
-      aria-label="Mapa do Brasil com um pino em cada um dos 27 estados atendidos pela AssFarma"
+      aria-label="Mapa do Brasil com um pino em cada um dos 27 estados atendidos pela Assfarma"
     >
       <defs>
         <linearGradient id="bmFill" gradientUnits="userSpaceOnUse" x1="80" y1="0" x2="540" y2="640">

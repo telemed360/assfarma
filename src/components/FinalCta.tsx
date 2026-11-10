@@ -29,7 +29,7 @@ export function FinalCta() {
                   <ArrowRight className="h-[1.05rem] w-[1.05rem]" aria-hidden />
                 </a>
                 <a
-                  href={waLink("Olá! Quero tirar uma dúvida sobre os planos da AssFarma.")}
+                  href={waLink("Olá! Quero tirar uma dúvida sobre os planos da Assfarma.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-light btn-lg w-full sm:w-auto"

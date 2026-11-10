@@ -25,7 +25,7 @@ export function Logo({
   ) : (
     <Image
       src={dark ? "/brand/logo-horizontal-white.png" : "/brand/logo-horizontal.png"}
-      alt="AssFarma"
+      alt="Assfarma"
       width={1522}
       height={345}
       priority={priority}
@@ -36,7 +36,7 @@ export function Logo({
   if (!href) return content;
 
   return (
-    <Link href={href} aria-label="AssFarma, página inicial" className="group inline-flex items-center">
+    <Link href={href} aria-label="Assfarma, página inicial" className="group inline-flex items-center">
       {content}
     </Link>
   );

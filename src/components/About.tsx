@@ -44,7 +44,7 @@ export function About() {
             </Reveal>
             <Reveal delay={120}>
               <p className="lead mt-5">
-                A AssFarma conecta pacientes a profissionais de saúde por meio de consultas online
+                A Assfarma conecta pacientes a profissionais de saúde por meio de consultas online
                 seguras, ágeis e acessíveis. Reunimos teleorientação, teleconsulta e acompanhamento
                 preventivo em uma plataforma simples, para pessoas, famílias e empresas.
               </p>

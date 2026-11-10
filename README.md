@@ -1,6 +1,6 @@
-# AssFarma — site institucional
+# Assfarma — site institucional
 
-Landing page da **AssFarma** construída em **Next.js 16 (App Router) + TypeScript + Tailwind CSS**.
+Landing page da **Assfarma** construída em **Next.js 16 (App Router) + TypeScript + Tailwind CSS**.
 
 > Todas as imagens, ícones, fontes e a marca estão **dentro do projeto**.
 > O site não carrega nenhum recurso de servidor externo — funciona offline depois do build.
@@ -48,13 +48,13 @@ Praticamente tudo que muda com frequência está em **um único arquivo**:
 
 ### ⚠️ Antes de publicar, troque:
 
-1. `site.domain`, `site.url` e `site.email` — domínio e e-mail definitivos da AssFarma.
+1. `site.domain`, `site.url` e `site.email` — domínio e e-mail definitivos da Assfarma.
 2. `site.legal.endereco` e `site.legal.diretorTecnico` — endereço do rodapé e responsável técnico com CRM.
    (Razão social e CNPJ já estão preenchidos: 61.523.679 NATALIA VALLESCA SANTOS — CNPJ 61.523.679/0001-98.)
 
 Já configurados: `site.whatsapp` (71 99652-4646), `site.clinicUrl`
 (`clinica.assfarma.com.br`, usado no botão "Consultório virtual") e os três
-`plans[].checkoutUrl` (individual, casal e familiar) na conta da AssFarma.
+`plans[].checkoutUrl` (individual, casal e familiar) na conta da Assfarma.
 
 Cada plano abre o `checkoutUrl` quando ele existe; sem `checkoutUrl`, o botão
 cai automaticamente no WhatsApp com uma mensagem pronta.

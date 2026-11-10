@@ -33,7 +33,7 @@ export function Footer() {
               Saúde de qualidade, humana e acessível, onde você estiver.
             </p>
             <a
-              href={waLink("Olá! Vim pelo site da AssFarma.")}
+              href={waLink("Olá! Vim pelo site da Assfarma.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline-light btn-md mt-6"
@@ -91,7 +91,7 @@ export function Footer() {
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-[1.05rem] w-[1.05rem] shrink-0 text-brand-400" aria-hidden />
                 <a
-                  href={waLink("Olá! Vim pelo site da AssFarma.")}
+                  href={waLink("Olá! Vim pelo site da Assfarma.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-brand-300"
