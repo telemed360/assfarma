@@ -39,7 +39,7 @@ export function About() {
                   width={2624}
                   height={1632}
                   sizes="(min-width: 1024px) 560px, 100vw"
-                  className="h-auto w-full"
+                  className="aspect-[1.3] h-auto w-full object-cover object-[55%_center]"
                 />
               </div>
 

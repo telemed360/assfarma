@@ -43,10 +43,10 @@ export const waLink = (msg: string) =>
 
 /* ------------------------------------------------------------------ NAV */
 export const navLinks = [
-  { label: "Medicamentos", href: "#medicamentos" },
   { label: "Quem somos", href: "#quem-somos" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Cobertura", href: "#cobertura" },
+  { label: "Medicamentos", href: "#medicamentos" },
   { label: "Planos", href: "#planos" },
   { label: "Carreira", href: "#consultor" },
   // { label: "Saúde Visual", href: "#saude-visual" },
