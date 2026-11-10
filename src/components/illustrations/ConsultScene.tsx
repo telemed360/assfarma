@@ -95,7 +95,7 @@ export function ConsultScene({ className = "" }: { className?: string }) {
       <g filter="url(#csCard)" className="animate-float" style={{ animationDelay: "-5s" }}>
         <rect x="380" y="418" width="222" height="92" rx="22" fill="#FFFFFF" />
         <text x="404" y="466" fontSize="34" fontWeight="800" fill="#2B4F35" fontFamily="var(--font-display, sans-serif)">
-          4,9
+          5,0
         </text>
         <rect x="404" y="478" width="86" height="7" rx="3.5" fill="#0B1B2B" opacity="0.26" />
         <g transform="translate(468 436)">
