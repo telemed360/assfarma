@@ -106,7 +106,7 @@ export function Footer() {
         <div className="mt-14 space-y-1.5 border-t border-white/10 pt-8 text-[0.8125rem] leading-relaxed text-brand-100/55">
           <p>
             Serviço de telemedicina prestado conforme a
-            Resolução CFM nº 2.314/2022. Não substitui atendimento de urgência e emergência
+            Resolução CFM nº 2.314/2022. Não substitui atendimento de urgência ou emergência
             presencial. Em caso de emergência, ligue 192 (SAMU).
           </p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
