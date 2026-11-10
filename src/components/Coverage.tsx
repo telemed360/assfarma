@@ -43,16 +43,31 @@ export function Coverage() {
                 return (
                   <Reveal key={n.title} delay={140 + i * 60}>
                     {(() => {
+                      const featured = Boolean(n.whatsappMsg);
                       const body = (
                         <>
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                          <span
+                            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${
+                              featured ? "bg-white/10 text-white ring-1 ring-white/15" : "bg-brand-50 text-brand-600"
+                            }`}
+                          >
                             <Icon className="h-[1.15rem] w-[1.15rem]" aria-hidden />
                           </span>
                           <div>
-                            <h3 className="text-[0.9375rem] font-bold leading-snug">{n.title}</h3>
-                            <p className="mt-1 text-sm leading-relaxed text-ink-muted">{n.desc}</p>
-                            {n.whatsappMsg && (
-                              <span className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-600">
+                            <h3
+                              className={`text-[0.9375rem] font-bold leading-snug ${featured ? "text-white" : ""}`}
+                            >
+                              {n.title}
+                            </h3>
+                            <p
+                              className={`mt-1 text-sm leading-relaxed ${
+                                featured ? "text-brand-100/85" : "text-ink-muted"
+                              }`}
+                            >
+                              {n.desc}
+                            </p>
+                            {featured && (
+                              <span className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-300">
                                 Conversar no WhatsApp
                                 <ArrowRight
                                   className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -63,18 +78,19 @@ export function Coverage() {
                           </div>
                         </>
                       );
-                      const cls = "card card-hover flex h-full items-start gap-3.5 p-5";
-                      return n.whatsappMsg ? (
+                      return featured ? (
                         <a
-                          href={waLink(n.whatsappMsg)}
+                          href={waLink(n.whatsappMsg!)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`group ${cls} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500`}
+                          className="group flex h-full items-start gap-3.5 rounded-3xl bg-gradient-to-br from-brand-700 to-brand-800 p-5
+                                     shadow-lift ring-1 ring-brand-700/40 transition-all duration-300 hover:-translate-y-1
+                                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
                         >
                           {body}
                         </a>
                       ) : (
-                        <div className={cls}>{body}</div>
+                        <div className="card card-hover flex h-full items-start gap-3.5 p-5">{body}</div>
                       );
                     })()}
                   </Reveal>
