@@ -91,9 +91,8 @@ export const plans: Plan[] = [
       "Sem carência e sem custos adicionais",
     ],
     cta: "Assinar plano individual",
-    /** ⚠️ TROCAR: link de checkout da AssFarma (este ainda é o da JMX, só com o domínio trocado). */
-    checkoutUrl:
-      "https://clinica.assfarma.com.br/checkout/57e318e7-e04a-4f64-b241-c1c4e8dcb5db/",
+    /** ⚠️ AGUARDANDO: link de checkout da AssFarma. Sem link, o botão abre o WhatsApp. */
+    // checkoutUrl: "",
   },
   {
     id: "casal",
@@ -108,9 +107,8 @@ export const plans: Plan[] = [
       "Sem carência e sem custos adicionais",
     ],
     cta: "Assinar plano casal",
-    /** ⚠️ TROCAR: link de checkout da AssFarma (este ainda é o da JMX, só com o domínio trocado). */
-    checkoutUrl:
-      "https://clinica.assfarma.com.br/checkout/b701868f-e951-433c-8b1e-874f4f6546f1/",
+    /** ⚠️ AGUARDANDO: link de checkout da AssFarma. Sem link, o botão abre o WhatsApp. */
+    // checkoutUrl: "",
   },
   {
     id: "familiar",
@@ -127,9 +125,8 @@ export const plans: Plan[] = [
       "Sem carência e sem custos adicionais",
     ],
     cta: "Assinar plano familiar",
-    /** ⚠️ TROCAR: link de checkout da AssFarma (este ainda é o da JMX, só com o domínio trocado). */
-    checkoutUrl:
-      "https://clinica.assfarma.com.br/checkout/2227f8a2-f0ce-408e-b4d6-9522e2f00abc/",
+    /** ⚠️ AGUARDANDO: link de checkout da AssFarma. Sem link, o botão abre o WhatsApp. */
+    // checkoutUrl: "",
   },
   {
     id: "empresa",
