@@ -305,7 +305,8 @@ export function Plans() {
               <Info className="h-5 w-5" aria-hidden />
             </span>
             <p className="text-[0.9375rem] leading-relaxed text-ink-soft">
-              A Assfarma é um serviço de assinatura de teleconsultas com crédito para medicamentos e{" "}
+              A <strong className="font-bold text-brand-800">Assfarma</strong> (Administração de Serviços de Saúde e
+              Farmácia) é um serviço de assinatura de teleconsultas com crédito para aquisição de medicamentos e{" "}
               <strong className="font-bold text-brand-800">não é um plano de saúde</strong>, nem substitui atendimento
               de urgência e emergência presencial.{" "}
               <strong className="font-bold text-red-600">Em caso de emergência, ligue 192 (SAMU).</strong>
