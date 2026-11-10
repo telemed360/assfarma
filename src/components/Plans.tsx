@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Check, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, Info, ShieldCheck, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import { companyPlan, planFeatures, planGroups, waLink, type PlanGroup } from "@/lib/site";
 
@@ -297,11 +297,20 @@ export function Plans() {
         </div>
 
         <Reveal delay={120}>
-          <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
-            Assfarma é um serviço de assinatura de teleconsultas com crédito para medicamentos e{" "}
-            <strong className="font-semibold text-ink-soft">não é um plano de saúde</strong> nem
-            substitui atendimento de urgência e emergência presencial. Em caso de emergência, ligue 192.
-          </p>
+          <div
+            role="note"
+            className="mx-auto mt-12 flex max-w-3xl items-start gap-4 rounded-2xl border border-brand-200 bg-white/90 px-5 py-4 text-left shadow-soft backdrop-blur sm:items-center sm:px-6"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
+              <Info className="h-5 w-5" aria-hidden />
+            </span>
+            <p className="text-[0.9375rem] leading-relaxed text-ink-soft">
+              A Assfarma é um serviço de assinatura de teleconsultas com crédito para medicamentos e{" "}
+              <strong className="font-bold text-brand-800">não é um plano de saúde</strong>, nem substitui atendimento
+              de urgência e emergência presencial.{" "}
+              <strong className="font-bold text-red-600">Em caso de emergência, ligue 192 (SAMU).</strong>
+            </p>
+          </div>
         </Reveal>
       </div>
     </section>
