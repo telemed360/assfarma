@@ -97,7 +97,7 @@ export type PlanGroup = {
 export const planGroups: PlanGroup[] = [
   {
     id: "individual",
-    name: "Individual",
+    name: "Vida Individual",
     who: "Para o titular",
     coverage: "Consultas ilimitadas para o titular",
     tiers: [
@@ -108,7 +108,7 @@ export const planGroups: PlanGroup[] = [
   },
   {
     id: "casal",
-    name: "Casal",
+    name: "Vida Casal",
     who: "Titular + cônjuge",
     coverage: "Consultas ilimitadas para titular + cônjuge",
     tiers: [
@@ -119,7 +119,7 @@ export const planGroups: PlanGroup[] = [
   },
   {
     id: "familia",
-    name: "Família",
+    name: "Vida Familiar",
     who: "Titular + 3 dependentes",
     coverage: "Consultas ilimitadas para titular + 3 dependentes",
     tiers: [
@@ -142,7 +142,7 @@ export const planFeatures = [
 export const lowestPrice = "49,90";
 
 export const companyPlan = {
-  name: "Plano Empresa",
+  name: "Plano Vida Empresarial",
   price: "Sob consulta",
   summary: "Saúde e medicamentos como benefício, com custo previsível.",
   features: [

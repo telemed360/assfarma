@@ -10,10 +10,17 @@ const cardInfo: Record<
   PlanGroup["id"],
   { name: string; summary: string; people: string; lives: number; badge?: string; featured?: boolean }
 > = {
-  individual: { name: "Individual", summary: "Para quem quer cuidar da própria saúde.", people: "Para 1 pessoa", lives: 1 },
-  casal: { name: "Casal", summary: "Para você e mais uma pessoa no mesmo plano.", people: "Para 2 pessoas", lives: 2 },
+  individual: {
+    name: "Vida Individual",
+    summary: "Para quem quer cuidar da própria saúde.",
+    people: "Para 1 pessoa",
+    lives: 1,
+    badge: "Mais acessível",
+    featured: true,
+  },
+  casal: { name: "Vida Casal", summary: "Para você e mais uma pessoa no mesmo plano.", people: "Para 2 pessoas", lives: 2 },
   familia: {
-    name: "Familiar",
+    name: "Vida Familiar",
     summary: "Para o titular e mais 3 dependentes.",
     people: "Até 4 pessoas",
     lives: 4,
@@ -180,7 +187,7 @@ export function Plans() {
           {/* empresa */}
           <Reveal delay={planGroups.length * 80} className="h-full">
             <article className="relative flex h-full flex-col rounded-[1.75rem] border border-slate-200/80 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
-              <h3 className="font-display text-xl font-extrabold text-brand-900">Empresa</h3>
+              <h3 className="font-display text-xl font-extrabold text-brand-900">Vida Empresarial</h3>
               <p className="mt-1.5 min-h-[2.75rem] text-sm leading-snug text-ink-soft">{companyPlan.summary}</p>
               <span className="mt-2 inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-600">
                 Para colaboradores
@@ -201,7 +208,7 @@ export function Plans() {
               <p className="mt-6 font-display text-[2.1rem] font-extrabold leading-none text-brand-900">{companyPlan.price}</p>
 
               <a
-                href={waLink("Olá! Quero falar com um consultor sobre o Plano Empresa da Assfarma.")}
+                href={waLink("Olá! Quero falar com um consultor sobre o Plano Vida Empresarial da Assfarma.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-lg mt-5 w-full border border-slate-300 bg-white text-ink hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
