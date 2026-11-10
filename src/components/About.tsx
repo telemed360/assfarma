@@ -58,7 +58,7 @@ export function About() {
 
               {/* selo: celular */}
               <div
-                className="absolute -left-3 top-6 flex animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur sm:-left-6"
+                className="absolute -left-6 top-6 hidden animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur md:flex"
                 style={{ animationDelay: "-4s" }}
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-50 text-brand-700">

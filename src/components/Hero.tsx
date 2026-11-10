@@ -21,7 +21,7 @@ export function Hero() {
       </div>
 
       <div className="container-jmx">
-        <div className="grid items-center gap-10 pb-4 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-10">
+        <div className="grid items-center gap-10 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-10">
           {/* coluna de texto */}
           <div className="max-w-2xl">
             <Reveal>
@@ -109,7 +109,7 @@ export function Hero() {
               </div>
 
               {/* selo: médico online */}
-              <div className="absolute -left-3 top-5 flex animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur sm:-left-6 sm:top-8">
+              <div className="absolute -left-6 top-8 hidden animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur md:flex">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75 animate-pulseRing" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-500" />
