@@ -17,7 +17,7 @@ export const site = {
   whatsapp: "5531990996657",
   whatsappLabel: "(31) 99099-6657",
 
-  /** ⚠️ CONFIRMAR: plataforma de teleconsulta (consultório virtual) da AssFarma. */
+  /** Plataforma de teleconsulta (consultório virtual) da AssFarma. */
   clinicUrl: "https://clinica.assfarma.com.br",
 
   /** ⚠️ TROCAR: dados jurídicos que aparecem no rodapé. */
