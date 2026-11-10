@@ -32,12 +32,12 @@ export function Header() {
       <div className="container-jmx flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegação principal">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Navegação principal">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-3.5 py-2 text-[0.9375rem] font-medium text-ink-soft
+              className="whitespace-nowrap rounded-full px-2.5 py-2 text-[0.875rem] font-medium text-ink-soft 2xl:px-3 2xl:text-[0.9375rem]
                          transition-colors hover:bg-brand-50 hover:text-brand-700"
             >
               {l.label}
@@ -45,22 +45,22 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2.5 lg:flex">
+        <div className="hidden items-center gap-2.5 whitespace-nowrap xl:flex">
           <a
             href={site.clinicUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-ghost btn-md"
+            className="btn-ghost btn-md !px-4 text-sm 2xl:!px-5 2xl:text-[0.9375rem]"
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
             Consultório virtual
           </a>
-          <a href="#planos" className="btn-primary btn-md">
+          <a href="#planos" className="btn-primary btn-md !px-4 text-sm 2xl:!px-5 2xl:text-[0.9375rem]">
             Contratar agora
           </a>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <a
             href={site.clinicUrl}
             target="_blank"
@@ -85,7 +85,7 @@ export function Header() {
 
       {/* menu mobile */}
       <div
-        className={`lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+        className={`xl:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
         aria-hidden={!open}
       >
         <div

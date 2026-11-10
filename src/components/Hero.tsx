@@ -1,7 +1,7 @@
-import { ShieldCheck, Zap, CreditCard, ArrowRight, Play } from "lucide-react";
-import PhoneConsult from "./illustrations/PhoneConsult";
+import { ShieldCheck, Zap, CreditCard, ArrowRight, Play, Pill } from "lucide-react";
+import Image from "next/image";
 import Reveal from "./Reveal";
-import { heroHighlights } from "@/lib/site";
+import { heroHighlights, lowestPrice } from "@/lib/site";
 
 const badges = [
   { icon: Zap, label: "100% digital" },
@@ -25,13 +25,24 @@ export function Hero() {
           {/* coluna de texto */}
           <div className="max-w-2xl">
             <Reveal>
-              <span className="eyebrow">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75 animate-pulseRing" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="eyebrow">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75 animate-pulseRing" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
+                  </span>
+                  Telemedicina regulamentada pelo CFM
                 </span>
-                Telemedicina regulamentada pelo CFM
-              </span>
+                <a
+                  href="#medicamentos"
+                  className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-accent-600 to-accent-500 px-3.5 py-1.5
+                             text-xs font-bold uppercase tracking-[0.12em] text-white shadow-glow transition-transform hover:-translate-y-0.5"
+                >
+                  <Pill className="h-3.5 w-3.5" aria-hidden />
+                  Com crédito para remédios (PBM)
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                </a>
+              </div>
             </Reveal>
 
             <Reveal delay={70}>
@@ -74,15 +85,55 @@ export function Hero() {
 
             <Reveal delay={310}>
               <p className="mt-6 text-sm font-semibold text-brand-700">
-                Planos a partir de <span className="text-xl font-extrabold text-brand-600">R$ 39,90</span>
-                <span className="font-medium text-ink-muted">/mês</span>
+                Planos a partir de{" "}
+                <span className="text-xl font-extrabold text-brand-600">R$ {lowestPrice}</span>
+                <span className="font-medium text-ink-muted">/mês, já com crédito para medicamentos</span>
               </p>
             </Reveal>
           </div>
 
-          {/* ilustração */}
+          {/* foto */}
           <Reveal delay={160} className="relative">
-            <PhoneConsult className="mx-auto w-full max-w-[34rem] lg:max-w-none" />
+            <div className="relative mx-auto max-w-[36rem] lg:max-w-none">
+              <div className="absolute -inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-br from-brand-200/70 via-brand-100/40 to-accent-200/50 blur-2xl" />
+              <div className="relative overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-black/5">
+                <Image
+                  src="/images/hero-medica.jpg"
+                  alt="Médica sorrindo, de jaleco e estetoscópio, segurando um tablet"
+                  width={1752}
+                  height={1536}
+                  priority
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+
+              {/* selo: médico online */}
+              <div className="absolute -left-3 top-5 flex animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur sm:-left-6 sm:top-8">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75 animate-pulseRing" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-500" />
+                </span>
+                <div className="leading-tight">
+                  <p className="text-sm font-bold text-ink">Médico online agora</p>
+                  <p className="text-xs text-ink-muted">Pronto atendimento 24h</p>
+                </div>
+              </div>
+
+              {/* selo: receita */}
+              <div
+                className="absolute -bottom-5 right-4 flex animate-float items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-card ring-1 ring-brand-100 backdrop-blur sm:-right-5"
+                style={{ animationDelay: "-3.5s" }}
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-50 text-accent-600">
+                  <Pill className="h-[1.05rem] w-[1.05rem]" aria-hidden />
+                </span>
+                <div className="leading-tight">
+                  <p className="text-sm font-bold text-ink">Receita + crédito</p>
+                  <p className="text-xs text-ink-muted">para comprar o remédio</p>
+                </div>
+              </div>
+            </div>
           </Reveal>
         </div>
       </div>

@@ -29,14 +29,14 @@ export function Logo({
       width={1522}
       height={345}
       priority={priority}
-      className={`h-9 w-auto sm:h-10 ${className}`}
+      className={`h-9 w-auto max-w-none shrink-0 sm:h-10 ${className}`}
     />
   );
 
   if (!href) return content;
 
   return (
-    <Link href={href} aria-label="Assfarma, página inicial" className="group inline-flex items-center">
+    <Link href={href} aria-label="Assfarma, página inicial" className="group inline-flex shrink-0 items-center">
       {content}
     </Link>
   );

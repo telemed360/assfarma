@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Medicines from "@/components/Medicines";
 import About from "@/components/About";
 import HowItWorks from "@/components/HowItWorks";
 import Coverage from "@/components/Coverage";
@@ -12,7 +13,7 @@ import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
-import { faq, plans, site } from "@/lib/site";
+import { faq, planGroups, site } from "@/lib/site";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -50,16 +51,16 @@ const jsonLd = {
     {
       "@type": "OfferCatalog",
       name: "Planos Assfarma",
-      itemListElement: plans
-        .filter((p) => p.price.startsWith("R$"))
-        .map((p) => ({
+      itemListElement: planGroups.flatMap((g) =>
+        g.tiers.map((t) => ({
           "@type": "Offer",
-          name: p.name,
-          price: p.price.replace("R$ ", "").replace(",", "."),
+          name: `Plano ${g.name} (${t.code})`,
+          price: t.price.replace(".", "").replace(",", "."),
           priceCurrency: "BRL",
-          description: p.summary,
+          description: `${g.coverage}, com R$ ${t.credit}/mês de crédito para medicamentos.`,
           availability: "https://schema.org/InStock",
         })),
+      ),
     },
     {
       "@type": "FAQPage",
@@ -82,16 +83,17 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
+        <Medicines />
         <About />
         <HowItWorks />
         <Coverage />
         <Specialties />
         <Plans />
-        <Consultant />
         {/* <VisionHealth /> */}
         {/* <Testimonials /> */}
         <Faq />
         <FinalCta />
+        <Consultant />
       </main>
       <Footer />
       <WhatsAppFab />

@@ -30,7 +30,7 @@ export const site = {
   },
 
   description:
-    "Consultas médicas online 24h por dia, com pronto atendimento, mais de 30 especialidades, nutrição e saúde mental. Planos a partir de R$ 39,90/mês, sem carência e 100% digital.",
+    "Consultas médicas online 24h por dia, com pronto atendimento, mais de 30 especialidades, nutrição e saúde mental. Planos a partir de R$ 49,90/mês com crédito mensal para medicamentos, sem carência e 100% digital.",
 
   hours: {
     urgencia: "Pronto atendimento 24h, todos os dias",
@@ -43,16 +43,19 @@ export const waLink = (msg: string) =>
 
 /* ------------------------------------------------------------------ NAV */
 export const navLinks = [
+  { label: "Medicamentos", href: "#medicamentos" },
   { label: "Quem somos", href: "#quem-somos" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Cobertura", href: "#cobertura" },
   { label: "Planos", href: "#planos" },
+  { label: "Carreira", href: "#consultor" },
   // { label: "Saúde Visual", href: "#saude-visual" },
 ] as const;
 
 /* ---------------------------------------------------------------- STATS */
 export const heroHighlights = [
   "Médico online em poucos minutos",
+  "Crédito mensal para medicamentos",
   "Atendimento 24h, todos os dias",
   "+30 especialidades médicas",
   "Regulamentado pelo CFM",
@@ -66,86 +69,90 @@ export const stats = [
 ] as const;
 
 /* --------------------------------------------------------------- PLANOS */
-export type Plan = {
-  id: string;
-  name: string;
+/**
+ * Telemedicina + Farmácia + PBM. Cada tipo de plano tem 3 níveis de crédito
+ * mensal para medicamentos (base: Crédito 01 = R$ 120, 02 = R$ 250, 03 = R$ 400 por pessoa).
+ */
+export type PlanTier = {
+  /** Código interno do plano (A01 a A09). */
+  code: string;
+  /** Nível de crédito: 1, 2 ou 3. */
+  level: 1 | 2 | 3;
+  /** Mensalidade, ex.: "49,90". */
   price: string;
-  period: string;
-  summary: string;
-  badge?: string;
-  featured?: boolean;
-  features: string[];
-  cta: string;
+  /** Crédito mensal para medicamentos, ex.: "120,00". */
+  credit: string;
+  /** ⚠️ AGUARDANDO: link de checkout. Sem link, o botão abre o WhatsApp. */
   checkoutUrl?: string;
 };
 
-export const plans: Plan[] = [
+export type PlanGroup = {
+  id: "individual" | "casal" | "familia";
+  name: string;
+  who: string;
+  coverage: string;
+  tiers: PlanTier[];
+};
+
+export const planGroups: PlanGroup[] = [
   {
     id: "individual",
-    name: "Plano Vida Individual",
-    price: "R$ 39,90",
-    period: "/mês",
-    summary: "Para quem quer um médico sempre à mão.",
-    features: [
-      "Consultas ilimitadas para o titular",
-      "Pronto atendimento 24h",
-      "Mais de 30 especialidades médicas",
-      "Sem carência e sem custos adicionais",
+    name: "Individual",
+    who: "Para o titular",
+    coverage: "Consultas ilimitadas para o titular",
+    tiers: [
+      { code: "A01", level: 1, price: "49,90", credit: "120,00" },
+      { code: "A02", level: 2, price: "59,90", credit: "250,00" },
+      { code: "A03", level: 3, price: "69,90", credit: "400,00" },
     ],
-    cta: "Assinar plano individual",
-    /** ⚠️ AGUARDANDO: link de checkout da Assfarma. Sem link, o botão abre o WhatsApp. */
-    // checkoutUrl: "",
   },
   {
     id: "casal",
-    name: "Plano Vida Casal",
-    price: "R$ 49,90",
-    period: "/mês",
-    summary: "O cuidado que acompanha vocês dois.",
-    features: [
-      "Consultas ilimitadas para titular + cônjuge",
-      "Pronto atendimento 24h",
-      "Mais de 30 especialidades médicas",
-      "Sem carência e sem custos adicionais",
+    name: "Casal",
+    who: "Titular + cônjuge",
+    coverage: "Consultas ilimitadas para titular + cônjuge",
+    tiers: [
+      { code: "A04", level: 1, price: "79,90", credit: "240,00" },
+      { code: "A05", level: 2, price: "89,90", credit: "500,00" },
+      { code: "A06", level: 3, price: "99,90", credit: "800,00" },
     ],
-    cta: "Assinar plano casal",
-    /** ⚠️ AGUARDANDO: link de checkout da Assfarma. Sem link, o botão abre o WhatsApp. */
-    // checkoutUrl: "",
   },
   {
-    id: "familiar",
-    name: "Plano Vida Familiar",
-    price: "R$ 54,90",
-    period: "/mês",
-    summary: "Toda a família protegida por menos de R$ 3 por dia.",
-    badge: "Mais escolhido",
-    featured: true,
-    features: [
-      "Consultas ilimitadas para titular + 3 dependentes",
-      "Pronto atendimento 24h:",
-      "Mais de 30 especialidades médicas",
-      "Sem carência e sem custos adicionais",
+    id: "familia",
+    name: "Família",
+    who: "Titular + 3 dependentes",
+    coverage: "Consultas ilimitadas para titular + 3 dependentes",
+    tiers: [
+      { code: "A07", level: 1, price: "129,90", credit: "480,00" },
+      { code: "A08", level: 2, price: "159,90", credit: "1.000,00" },
+      { code: "A09", level: 3, price: "169,90", credit: "1.600,00" },
     ],
-    cta: "Assinar plano familiar",
-    /** ⚠️ AGUARDANDO: link de checkout da Assfarma. Sem link, o botão abre o WhatsApp. */
-    // checkoutUrl: "",
-  },
-  {
-    id: "empresa",
-    name: "Plano Empresa",
-    price: "Sob consulta",
-    period: "",
-    summary: "Saúde como benefício, com custo previsível.",
-    features: [
-      "Cobertura completa para os colaboradores",
-      "Pronto atendimento 24h para toda a equipe",
-      "+30 especialidades e saúde mental",
-      "Painel de gestão e relatórios de uso",
-      "Implantação dedicada e suporte consultivo",
-    ],
-    cta: "Falar com consultor",
   },
 ];
+
+/** Recursos comuns a todos os planos com PBM. */
+export const planFeatures = [
+  "Pronto atendimento 24h",
+  "Mais de 30 especialidades médicas",
+  "Crédito aceito em +25 mil farmácias",
+  "Sem carência e sem fidelidade",
+];
+
+/** Menor mensalidade, usada no hero e na descrição do site. */
+export const lowestPrice = "49,90";
+
+export const companyPlan = {
+  name: "Plano Empresa",
+  price: "Sob consulta",
+  summary: "Saúde e medicamentos como benefício, com custo previsível.",
+  features: [
+    "Cobertura completa para os colaboradores",
+    "Pronto atendimento 24h para toda a equipe",
+    "+30 especialidades e saúde mental",
+    "Painel de gestão e relatórios de uso",
+  ],
+  cta: "Falar com consultor",
+};
 
 /* -------------------------------------------------------- ESPECIALIDADES */
 export const specialties = [
