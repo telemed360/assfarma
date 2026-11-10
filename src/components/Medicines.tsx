@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, BadgeCheck, Check, MessageCircle, Pill, ShieldCheck, Sparkles, Stethoscope, Store, Wallet } from "lucide-react";
+import { ArrowRight, BadgeCheck, Check, FileText, MapPin, MessageCircle, Pill, ShieldCheck, Sparkles, Stethoscope, Store, Wallet } from "lucide-react";
 import Reveal from "./Reveal";
 import { planGroups, waLink } from "@/lib/site";
 
@@ -16,7 +16,7 @@ const byLevel = (level: number, id: string) =>
 const short = (v: string) => v.replace(",00", "");
 
 const perks = [
-  { icon: Store, text: "+25 mil farmácias credenciadas" },
+  { icon: FileText, text: "Receita digital válida em todo o Brasil" },
   { icon: ShieldCheck, text: "Sem carência e sem fidelidade" },
   { icon: BadgeCheck, text: "Marca, genéricos e similares" },
   { icon: Wallet, text: "Sem pagar do bolso, dentro do crédito" },
@@ -59,7 +59,7 @@ export function Medicines() {
 
           <Reveal delay={70}>
             <h2 className="mt-6 text-[2.15rem] font-extrabold leading-[1.12] sm:text-5xl lg:text-[3.4rem]">
-              Da consulta ao remédio,{" "}
+              Da consulta ao medicamento,{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-accent-600 to-accent-500 bg-clip-text text-transparent">
                   100% coberto
@@ -99,7 +99,13 @@ export function Medicines() {
 
                   <div className="relative flex h-full flex-col justify-between">
                     <div className="flex items-start justify-between">
-                      <Image src="/brand/logo-horizontal-white.png" alt="" width={1522} height={345} className="h-6 w-auto" />
+                      <Image
+                        src={i === 1 ? "/brand/logo-horizontal-allwhite.png" : "/brand/logo-horizontal-white.png"}
+                        alt=""
+                        width={1522}
+                        height={345}
+                        className="h-14 w-auto max-w-[70%] object-contain object-left md:h-8 md:max-w-none"
+                      />
                       <span className="rounded-full bg-white/15 px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-wider ring-1 ring-white/25">
                         Crédito {String(level).padStart(2, "0")}
                       </span>
@@ -125,9 +131,32 @@ export function Medicines() {
           })}
         </div>
 
+        {/* ------------------------------------------------ rede credenciada */}
+        <Reveal delay={60}>
+          <div className="mx-auto mt-12 flex max-w-5xl flex-col items-center gap-5 rounded-3xl border-2 border-accent-200 bg-white p-6 text-center shadow-card sm:flex-row sm:p-7 sm:text-left">
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600 text-white shadow-glow">
+              <Store className="h-7 w-7" aria-hidden />
+            </span>
+            <div className="flex-1">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent-600">Rede credenciada</p>
+              <p className="mt-1 font-display text-2xl font-extrabold leading-tight text-ink sm:text-[1.75rem]">
+                Mais de 25 mil farmácias credenciadas
+              </p>
+              <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-ink-soft">
+                Use o seu crédito para comprar o medicamento receitado nas farmácias da rede credenciada,
+                em todo o Brasil. É só se identificar no balcão e apresentar a receita.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-brand-50 px-4 py-2 text-sm font-bold text-brand-700 ring-1 ring-brand-100">
+              <MapPin className="h-4 w-4" aria-hidden />
+              Todo o Brasil
+            </span>
+          </div>
+        </Reveal>
+
         {/* ------------------------------------------------ faixa de vantagens */}
         <Reveal delay={80}>
-          <ul className="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-accent-100 bg-accent-100 shadow-soft lg:grid-cols-4">
+          <ul className="mx-auto mt-6 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-accent-100 bg-accent-100 shadow-soft lg:grid-cols-4">
             {perks.map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-3 bg-white px-4 py-4 sm:px-5">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-50 text-accent-600">

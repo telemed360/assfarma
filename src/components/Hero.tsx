@@ -87,7 +87,7 @@ export function Hero() {
               <p className="mt-6 text-sm font-semibold text-brand-700">
                 Planos a partir de{" "}
                 <span className="text-xl font-extrabold text-brand-600">R$ {lowestPrice}</span>
-                <span className="font-medium text-ink-muted">/mês, já com crédito para medicamentos</span>
+                <span className="font-medium text-ink-muted">/mês, com crédito para medicamentos</span>
               </p>
             </Reveal>
           </div>
@@ -125,12 +125,12 @@ export function Hero() {
                 className="absolute flex animate-float items-center rounded-2xl bg-white/95 shadow-card ring-1 ring-brand-100 backdrop-blur -bottom-5 right-2 gap-2 px-3 py-2 md:-right-5 md:gap-2.5 md:px-4 md:py-3"
                 style={{ animationDelay: "-3.5s" }}
               >
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-50 text-accent-600 md:h-9 md:w-9 md:rounded-xl">
+                <span className="hidden h-9 w-9 items-center justify-center rounded-xl bg-accent-50 text-accent-600 md:flex">
                   <Pill className="h-3.5 w-3.5 md:h-[1.05rem] md:w-[1.05rem]" aria-hidden />
                 </span>
                 <div className="leading-tight">
-                  <p className="text-xs font-bold text-ink md:text-sm">Receita + crédito</p>
-                  <p className="hidden text-xs text-ink-muted md:block">para comprar o remédio</p>
+                  <p className="text-xs font-bold text-ink md:text-sm">Receita + Medicamentos</p>
+                  <p className="hidden text-xs text-ink-muted md:block">na rede credenciada</p>
                 </div>
               </div>
             </div>

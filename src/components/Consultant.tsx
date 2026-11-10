@@ -19,7 +19,7 @@ const wallet = [
   { plan: "Plano Vida Individual", people: "Titular" },
   { plan: "Plano Vida Casal", people: "Titular + cônjuge" },
   { plan: "Plano Vida Familiar", people: "Titular + 3 dependentes" },
-  { plan: "Plano Empresa", people: "Colaboradores da empresa" },
+  { plan: "Plano Empresarial", people: "Colaboradores da empresa" },
 ];
 
 export function Consultant() {

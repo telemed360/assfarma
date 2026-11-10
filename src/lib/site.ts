@@ -241,6 +241,10 @@ export const faq = [
     a: "Não. A Assfarma é um serviço de telemedicina por assinatura, regulamentado pelo Conselho Federal de Medicina (Resolução CFM nº 2.314/2022). Não substitui um plano de saúde nem atende urgências que exijam socorro presencial. Nesses casos, procure o pronto-socorro mais próximo ou ligue 192.",
   },
   {
+    q: "Como eu posso adquirir o medicamento?",
+    a: "Para adquirir o medicamento, é preciso ter a receita eletrônica gerada em uma consulta na Clínica Assfarma. Com ela, você pode comprar o medicamento em mais de 25 mil farmácias credenciadas em todo o Brasil. Se a farmácia da sua preferência ainda não for credenciada, é possível solicitar o credenciamento dela. Garantimos a aquisição da medicação: o crédito só pode ser usado na compra de medicamentos e não pode ser utilizado para outras finalidades.",
+  },
+  {
     q: "Tem carência ou taxa de adesão?",
     a: "Nenhuma das duas. A assinatura é liberada logo após a confirmação do pagamento e você já pode consultar no mesmo dia.",
   },
