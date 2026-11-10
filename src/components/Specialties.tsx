@@ -20,7 +20,7 @@ export function Specialties() {
           </Reveal>
           <Reveal delay={120}>
             <p className="mt-4 text-lg leading-relaxed text-brand-100/85">
-              Consultas ilimitadas e sem custos adicionais. Seu clínico é seu guia, ele identifica a melhor especialidade para cada situação, economizando seu tempo e focando no que realmente importa.
+              Seu clínico é seu guia: ele identifica a melhor especialidade para cada situação e faz o encaminhamento, com a primeira consulta e um retorno em até 30 dias incluídos no seu plano.
             </p>
           </Reveal>
         </div>

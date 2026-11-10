@@ -48,7 +48,7 @@ function PlanCard({ group, index }: { group: PlanGroup; index: number }) {
   // cores: o Familiar é destacado (fundo verde musgo, como no layout anterior)
   const c = featured
     ? {
-        card: "bg-gradient-to-b from-navy-800 to-navy-900 text-white shadow-lift ring-1 ring-brand-400/40 md:-translate-y-2",
+        card: "bg-gradient-to-b from-navy-800 to-navy-900 text-white shadow-lift ring-1 ring-brand-400/40",
         title: "text-white",
         text: "text-brand-100/80",
         pill: "bg-white/10 text-brand-100 ring-1 ring-white/15",
@@ -67,22 +67,23 @@ function PlanCard({ group, index }: { group: PlanGroup; index: number }) {
         item: "text-brand-50/90",
       }
     : {
-        card: "bg-white border border-slate-200/80 shadow-soft hover:-translate-y-1 hover:border-brand-200 hover:shadow-card",
+        // cards intercalados em pêssego/laranja suave (Casal e Empresarial)
+        card: "bg-gradient-to-b from-[#FFF6F1] to-accent-50 text-ink shadow-soft ring-1 ring-accent-200 hover:-translate-y-1 hover:shadow-card",
         title: "text-brand-900",
         text: "text-ink-soft",
-        pill: "bg-brand-50 text-brand-600",
-        box: "border-slate-200/80 bg-slate-50/70",
-        label: "text-ink-muted",
-        track: "border-slate-200 bg-white",
-        on: "bg-brand-600 text-white shadow-soft",
-        off: "text-ink-soft hover:bg-brand-50",
+        pill: "bg-accent-100 text-accent-700",
+        box: "border-accent-200/70 bg-white/70",
+        label: "text-accent-700/80",
+        track: "border-accent-200 bg-white",
+        on: "bg-accent-500 text-white shadow-soft",
+        off: "text-ink-soft hover:bg-accent-50",
         boxText: "text-ink-soft",
         strong: "text-ink",
         price: "text-brand-900",
         muted: "text-ink-muted",
-        btn: "btn border border-slate-300 bg-white text-ink hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50",
-        divider: "border-slate-100",
-        check: "text-brand-500",
+        btn: "btn-primary",
+        divider: "border-accent-200/70",
+        check: "text-accent-600",
         item: "text-ink-soft",
       };
 
@@ -184,21 +185,21 @@ export function Plans() {
             <PlanCard key={g.id} group={g} index={i} />
           ))}
 
-          {/* empresa */}
+          {/* empresa (pêssego, intercalado) */}
           <Reveal delay={planGroups.length * 80} className="h-full">
-            <article className="relative flex h-full flex-col rounded-[1.75rem] border border-slate-200/80 bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+            <article className="relative flex h-full flex-col rounded-[1.75rem] bg-gradient-to-b from-[#FFF6F1] to-accent-50 p-7 text-ink shadow-soft ring-1 ring-accent-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
               <h3 className="font-display text-xl font-extrabold text-brand-900">Vida Empresarial</h3>
               <p className="mt-1.5 min-h-[2.75rem] text-sm leading-snug text-ink-soft">{companyPlan.summary}</p>
-              <span className="mt-2 inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-600">
+              <span className="mt-2 inline-flex w-fit rounded-full bg-accent-100 px-3 py-1 text-xs font-bold text-accent-700">
                 Para colaboradores
               </span>
 
-              <div className="mt-6 flex-1 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4">
-                <p className="text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-ink-muted">O que inclui</p>
+              <div className="mt-6 flex-1 rounded-2xl border border-accent-200/70 bg-white/70 p-4">
+                <p className="text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-accent-700/80">O que inclui</p>
                 <ul className="mt-3 space-y-2.5">
                   {companyPlan.features.map((f) => (
                     <li key={f} className="flex gap-2 text-sm leading-snug">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" aria-hidden />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-600" aria-hidden />
                       <span className="text-ink-soft">{f}</span>
                     </li>
                   ))}
@@ -211,7 +212,7 @@ export function Plans() {
                 href={waLink("Olá! Quero falar com um consultor sobre o Plano Vida Empresarial da Assfarma.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-lg mt-5 w-full border border-slate-300 bg-white text-ink hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
+                className="btn-primary btn-lg mt-5 w-full"
               >
                 {companyPlan.cta}
               </a>

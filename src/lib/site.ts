@@ -250,7 +250,7 @@ export const faq = [
   },
   {
     q: "Quantas consultas eu posso fazer?",
-    a: "Ilimitadas. Não há limite de atendimentos no pronto atendimento 24h nem nas especialidades incluídas no seu plano.",
+    a: "No Pronto Atendimento 24h, as consultas são ilimitadas. Para consultas com especialistas, após o encaminhamento do clínico no Pronto Atendimento 24h, o seu plano inclui a primeira consulta com a especialidade e um retorno em até 30 dias.",
   },
   {
     q: "O médico pode emitir receita e atestado?",

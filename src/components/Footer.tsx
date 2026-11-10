@@ -103,7 +103,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 space-y-4 border-t border-white/10 pt-8 text-[0.8125rem] leading-relaxed text-brand-100/55">
+        <div className="mt-14 space-y-1.5 border-t border-white/10 pt-8 text-[0.8125rem] leading-relaxed text-brand-100/55">
           <p>
             Serviço de telemedicina prestado conforme a
             Resolução CFM nº 2.314/2022. Não substitui atendimento de urgência e emergência

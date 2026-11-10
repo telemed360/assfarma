@@ -107,16 +107,20 @@ export function Medicines() {
                         className="h-11 w-auto max-w-[60%] object-contain object-left md:h-8 md:max-w-none"
                       />
                       <span className="rounded-full bg-white/15 px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-wider ring-1 ring-white/25">
-                        Crédito {String(level).padStart(2, "0")}
+                        Saldo {String(level).padStart(2, "0")}
                       </span>
                     </div>
 
                     <div>
-                      <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-white/70">Crédito mensal individual</p>
+                      <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-white/70">Saldo mensal para medicamentos</p>
                       <p className="mt-0.5 font-display text-[2.6rem] font-extrabold leading-none">
                         <span className="mr-1 align-top text-lg text-white/80">R$</span>
                         {short(ind)}
                       </p>
+                      <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-wider ring-1 ring-white/25">
+                        <Check className="h-3 w-3" aria-hidden />
+                        Incluso no plano · sem custo extra
+                      </span>
                     </div>
 
                     <div className="flex items-center gap-3 text-[0.75rem] font-semibold text-white/85">
