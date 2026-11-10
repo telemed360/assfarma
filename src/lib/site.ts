@@ -200,7 +200,7 @@ export const network: NetworkItem[] = [
   { title: "Novos parceiros", desc: "Rede em expansão contínua por todas as regiões." },
   {
     title: "Profissional de Carreira",
-    desc: "Seja um consultor Assfarma e receba renda recorrente na sua região.",
+    desc: "Seja um consultor Assfarma na sua região e conquiste uma renda recorrente vitalícia.",
     whatsappMsg: "Olá! Vim pelo site e quero ser um consultor Assfarma.",
   },
 ];

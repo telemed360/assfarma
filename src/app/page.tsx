@@ -5,6 +5,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Coverage from "@/components/Coverage";
 import Specialties from "@/components/Specialties";
 import Plans from "@/components/Plans";
+import Consultant from "@/components/Consultant";
 // import VisionHealth from "@/components/VisionHealth";
 // import Testimonials from "@/components/Testimonials"; // volta quando houver depoimentos reais autorizados
 import Faq from "@/components/Faq";
@@ -86,6 +87,7 @@ export default function Home() {
         <Coverage />
         <Specialties />
         <Plans />
+        <Consultant />
         {/* <VisionHealth /> */}
         {/* <Testimonials /> */}
         <Faq />
