@@ -21,9 +21,9 @@ export function Hero() {
       </div>
 
       <div className="container-jmx">
-        <div className="grid items-center gap-10 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-10">
-          {/* coluna de texto */}
-          <div className="max-w-2xl">
+        <div className="grid items-center gap-12 pb-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:pb-10">
+          {/* coluna de texto (no computador fica à direita; no celular, depois da foto) */}
+          <div className="max-w-2xl lg:order-2">
             <Reveal>
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="eyebrow">
@@ -92,19 +92,18 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* foto */}
-          <Reveal delay={160} className="relative">
+          {/* foto (no computador fica à esquerda; no celular, aparece primeiro) */}
+          <Reveal delay={160} className="relative order-first lg:order-1">
             <div className="relative mx-auto max-w-[36rem] lg:max-w-none">
               <div className="absolute -inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-br from-brand-200/70 via-brand-100/40 to-accent-200/50 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-black/5">
+              <div className="relative isolate aspect-[4/5] overflow-hidden rounded-[2.25rem] shadow-lift ring-1 ring-black/5 [transform:translateZ(0)] sm:aspect-[0.92]">
                 <Image
                   src="/images/hero-medica.jpg"
                   alt="Médica sorrindo, de jaleco e estetoscópio, segurando um tablet"
-                  width={1752}
-                  height={1536}
+                  fill
                   priority
                   sizes="(min-width: 1024px) 560px, 100vw"
-                  className="aspect-[4/5] h-auto w-full object-cover object-[40%_center] sm:aspect-[0.92]"
+                  className="object-cover object-[40%_center]"
                 />
               </div>
 

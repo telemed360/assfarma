@@ -68,6 +68,20 @@ export const stats = [
   { value: 0, suffix: "", label: "Carência e coparticipação", hint: "Use no mesmo dia da contratação" },
 ] as const;
 
+/* ----------------------------------------------------- REDE CREDENCIADA */
+/** ⚠️ CONFIRMAR: redes que fazem parte da rede credenciada (lista enviada pelo cliente). */
+export const pharmacyChains = [
+  "Araujo",
+  "Droganorte",
+  "Droga Raia",
+  "Drogasil",
+  "Pacheco",
+  "Ultrafarma",
+  "UltraPopular",
+  "RedeFarma",
+  "Pague Menos",
+];
+
 /* --------------------------------------------------------------- PLANOS */
 /**
  * Telemedicina + Farmácia + PBM. Cada tipo de plano tem 3 níveis de crédito

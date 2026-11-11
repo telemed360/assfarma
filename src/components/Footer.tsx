@@ -1,4 +1,4 @@
-import { Mail, Clock, Phone, MessageCircle } from "lucide-react";
+import { Mail, Clock, MessageCircle } from "lucide-react";
 import Logo from "./Logo";
 import { site, waLink } from "@/lib/site";
 
@@ -19,7 +19,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-20 overflow-hidden bg-brand-950 text-brand-100/80">
+    <footer className="relative overflow-hidden bg-brand-950 text-brand-100/80">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-0 h-80 w-80 rounded-full bg-brand-700/25 blur-3xl" />
         <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-navy-700/30 blur-3xl" />
@@ -89,14 +89,14 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex gap-3">
-                <Phone className="mt-0.5 h-[1.05rem] w-[1.05rem] shrink-0 text-brand-400" aria-hidden />
+                <MessageCircle className="mt-0.5 h-[1.05rem] w-[1.05rem] shrink-0 text-brand-400" aria-hidden />
                 <a
                   href={waLink("Olá! Vim pelo site da Assfarma.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-brand-300"
                 >
-                  {site.whatsappLabel}
+                  <span className="font-semibold text-white">WhatsApp:</span> {site.whatsappLabel}
                 </a>
               </li>
             </ul>

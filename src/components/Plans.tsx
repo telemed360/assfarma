@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Check, Info, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, ShieldCheck, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import { companyPlan, planFeatures, planGroups, waLink, type PlanGroup } from "@/lib/site";
 
@@ -299,11 +299,8 @@ export function Plans() {
         <Reveal delay={120}>
           <div
             role="note"
-            className="mx-auto mt-12 flex max-w-4xl items-start gap-4 rounded-2xl border border-brand-200 bg-white/90 px-5 py-4 text-left shadow-soft backdrop-blur sm:items-center sm:px-6"
+            className="mx-auto mt-12 max-w-4xl rounded-2xl border border-brand-200 bg-white/90 px-5 py-4 text-left shadow-soft backdrop-blur sm:px-6"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
-              <Info className="h-5 w-5" aria-hidden />
-            </span>
             <p className="text-[0.9375rem] leading-relaxed text-ink-soft">
               <strong className="font-bold text-brand-800">Assfarma</strong> (Administração de Serviços de Saúde e
               Farmácia) é um serviço de assinatura de teleconsultas com crédito para aquisição de medicamentos e{" "}
