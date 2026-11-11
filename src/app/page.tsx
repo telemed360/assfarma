@@ -84,11 +84,11 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
+        <Specialties />
         <Medicines />
         <About />
         <HowItWorks />
         <Coverage />
-        <Specialties />
         <Plans />
         {/* <VisionHealth /> */}
         {/* <Testimonials /> */}
