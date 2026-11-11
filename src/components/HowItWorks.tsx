@@ -10,7 +10,7 @@ const pillars = [
   {
     icon: Clock3,
     title: "A qualquer momento",
-    desc: "Pronto Atendimento 24 horas por dia, 7 dias por semana, para que você tenha assistência sempre que precisar. Clínico Geral, Generalista, Médico da Família, Pediatra, Geriatra.",
+    desc: "Pronto Atendimento 24 horas por dia, 7 dias por semana, para que você tenha assistência sempre que precisar. Clínico Geral, Generalista, Médico da Família, Pediatria, Geriatria, Psicologia e Nutrição Orientativa.",
   },
   {
     icon: Siren,

@@ -23,7 +23,7 @@ const perks = [
 ];
 
 const steps = [
-  { icon: Sparkles, title: "Escolha o plano e o crédito", desc: "Individual, casal ou família." },
+  { icon: Sparkles, title: "Escolha o plano e o crédito", desc: "Vida Individual, Vida Casal, Vida Familiar ou Vida Empresarial." },
   { icon: Check, title: "Contrate", desc: "O benefício é liberado na hora, sem carência." },
   { icon: Stethoscope, title: "Consulte e receba a receita", desc: "A receita digital vai direto para o app." },
   { icon: Pill, title: "Retire na farmácia", desc: "Use o saldo do mês no medicamento." },

@@ -63,7 +63,7 @@ export const heroHighlights = [
 ] as const;
 
 export const stats = [
-  { value: 24, suffix: "h", label: "Pronto atendimento", hint: "Clínico Geral, Generalista, Médico da Família, Pediatra e Geriatra." },
+  { value: 24, suffix: "h", label: "Pronto atendimento", hint: "Clínico Geral, Generalista, Médico da Família, Pediatria, Geriatria, Psicologia e Nutrição Orientativa." },
   { value: 30, prefix: "+", label: "Especialidades", hint: "Da Alergologia a Urologia." },
   { value: 0, suffix: "", label: "Carência e coparticipação", hint: "Use no mesmo dia da contratação" },
 ] as const;
