@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Check, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import Reveal from "./Reveal";
 import { companyPlan, planFeatures, planGroups, waLink, type PlanGroup } from "@/lib/site";
 
@@ -268,18 +268,6 @@ export function Plans() {
                   ))}
                 </ul>
 
-                {/* destaque NR-1 */}
-                <div className="mt-4 rounded-xl bg-gradient-to-br from-brand-700 to-brand-800 p-3.5 text-white shadow-soft">
-                  <p className="flex items-center gap-2">
-                    <span className="shrink-0 whitespace-nowrap rounded-md bg-accent-500 px-2 py-0.5 text-[0.6875rem] font-extrabold tracking-wider">NR-1</span>
-                    <span className="text-[0.8125rem] font-bold leading-tight">Suporte Psicossocial Corporativo</span>
-                  </p>
-                  <p className="mt-2 flex gap-2 text-xs leading-snug text-brand-50/90">
-                    <ShieldCheck className="mt-px h-3.5 w-3.5 shrink-0 text-accent-300" aria-hidden />
-                    Saúde mental dos colaboradores alinhada às diretrizes da NR-1: prevenção, acolhimento e
-                    monitoramento emocional, com gestão completa.
-                  </p>
-                </div>
               </div>
 
               <p className="mt-6 font-display text-[2.1rem] font-extrabold leading-none text-brand-900">{companyPlan.price}</p>
