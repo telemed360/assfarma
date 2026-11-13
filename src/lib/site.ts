@@ -58,7 +58,7 @@ export const heroHighlights = [
   "Crédito mensal para medicamentos",
   "Atendimento 24h, todos os dias",
   "+30 especialidades médicas",
-  "Regulamentado pelo CFM",
+  "Regulamentado pelo Conselho Federal de Medicina (CFM)",
   "Cobertura nacional",
 ] as const;
 
@@ -252,7 +252,7 @@ export const testimonials = [
 export const faq = [
   {
     q: "A Assfarma é um plano de saúde?",
-    a: "Não. A Assfarma é um serviço de telemedicina por assinatura, regulamentado pelo Conselho Federal de Medicina (Resolução CFM nº 2.314/2022). Não substitui um plano de saúde nem atende urgências que exijam socorro presencial. Nesses casos, procure o pronto-socorro mais próximo ou ligue 192 (SAMU).",
+    a: "Não. A Assfarma é um serviço de telemedicina por assinatura, regulamentado pelo Conselho Federal de Medicina (Resolução CFM nº 2.314/2022). Não substitui um plano de saúde nem atende urgências que exijam socorro presencial. Nesses casos, procure o pronto-socorro mais próximo, ligue 192 (SAMU) ou 193 (Corpo de Bombeiros).",
   },
   {
     q: "Como eu posso adquirir o medicamento?",

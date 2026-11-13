@@ -31,7 +31,7 @@ export function Hero() {
                     <span className="absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75 animate-pulseRing" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
                   </span>
-                  Telemedicina regulamentada pelo CFM
+                  Telemedicina regulamentada pelo Conselho Federal de Medicina (CFM)
                 </span>
                 <a
                   href="#medicamentos"
@@ -39,7 +39,7 @@ export function Hero() {
                              text-xs font-bold uppercase tracking-[0.12em] text-white shadow-glow transition-transform hover:-translate-y-0.5"
                 >
                   <Pill className="h-3.5 w-3.5" aria-hidden />
-                  Com crédito para medicamentos (PBM)
+                  Com crédito do Programa de Bonificação de Medicamentos (PBM)
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
                 </a>
               </div>

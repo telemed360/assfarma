@@ -107,7 +107,7 @@ export function Footer() {
           <p>
             Serviço de telemedicina prestado conforme a
             Resolução CFM nº 2.314/2022. Não substitui atendimento de urgência ou emergência
-            presencial. Em caso de emergência, ligue 192 (SAMU).
+            presencial. Em caso de emergência, ligue 192 (SAMU) ou 193 (Corpo de Bombeiros).
           </p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p>

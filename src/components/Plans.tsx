@@ -294,7 +294,7 @@ export function Plans() {
               Farmácia) é um serviço de assinatura de teleconsultas com crédito para aquisição de medicamentos e{" "}
               <strong className="font-bold text-brand-800">não é um plano de saúde</strong>, nem substitui atendimento
               de urgência ou emergência presencial.{" "}
-              <strong className="font-bold text-red-600">Em caso de emergência, ligue 192 (SAMU).</strong>
+              <strong className="font-bold text-red-600">Em caso de emergência, ligue 192 (SAMU) ou 193 (Corpo de Bombeiros).</strong>
             </p>
           </div>
         </Reveal>

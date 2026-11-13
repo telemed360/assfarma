@@ -53,7 +53,7 @@ export function Medicines() {
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-600 to-accent-500 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-glow">
               <Pill className="h-3.5 w-3.5" aria-hidden />
-              Plano de Medicamentos (PBM)
+              Programa de Bonificação de Medicamentos (PBM)
             </span>
           </Reveal>
 
@@ -68,7 +68,7 @@ export function Medicines() {
                   <path d="M3 13 C 80 3, 200 3, 297 11" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" />
                 </svg>
               </span>{" "}
-              pelo seu crédito
+              pelo seu plano
             </h2>
           </Reveal>
 
