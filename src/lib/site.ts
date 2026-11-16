@@ -58,7 +58,7 @@ export const heroHighlights = [
   "Crédito mensal para medicamentos",
   "Atendimento 24h, todos os dias",
   "+30 especialidades médicas",
-  "Regulamentado pelo Conselho Federal de Medicina (CFM)",
+  "Regulamentado pelo Conselho Federal de Medicina",
   "Cobertura nacional",
 ] as const;
 
